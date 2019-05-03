@@ -7,6 +7,7 @@ import SignupContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute, GateKeeperRoute } from '../util/route_util';
 import NavBarContainer from './nav/nav_bar_container';
 import CurrentUserContainer from './current_user/current_user_container';
+import ShowPhotoContainer from './photo/show_photo_container';
 
 const App = () => (
     <>
@@ -18,6 +19,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <ProtectedRoute exact path="/users/:id" component={CurrentUserContainer} />
+            <ProtectedRoute exact path="/photos/:photoId" component={ShowPhotoContainer} />
             <ProtectedRoute path="/" component={() => (<h1>hey</h1>)}/>
         </Switch>
     </>

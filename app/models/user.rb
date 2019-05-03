@@ -24,6 +24,9 @@ class User < ApplicationRecord
 
     has_one_attached :profile_pic
 
+    has_many :photos,
+    foreign_key: :poster_id,
+    class_name: :Photo
 
     def password=(password)
         @password = password
@@ -44,14 +47,6 @@ class User < ApplicationRecord
 
     def ensure_session_token
         self.session_token ||= make_unique_session_token()
-    end
-
-    def ensure_profile_pic
-        self.profile_pic.attach( 
-            io: File.open('/'),
-            filename: 'avatar.jpg',
-            content_type: 'image/jpg',
-            )
     end
 
     def reset_session_token!

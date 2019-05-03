@@ -4,8 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 //test functions
-import * as ApiUtil from './util/session_api_util';
-import * as Actions from './actions/session_actions';
+import * as ApiUtil from './util/photo_api_util';
+import * as Actions from './actions/photo_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let root = document.getElementById('root');
