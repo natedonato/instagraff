@@ -14,7 +14,6 @@ class ProfileForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('user[profile_pic]', this.state.photoFile);
-        debugger;
         this.props.updateUserPhoto(formData, this.props.currentUser.id);
     };
 
