@@ -47,12 +47,12 @@ class LoginForm extends React.Component {
 
         let username = {
             strings: ["demo_user93"],
-            typeSpeed: 65
+            typeSpeed: 25
         };
 
         let password = {
             strings: ["password93"],
-            typeSpeed: 65
+            typeSpeed: 25
         };
 
         this.setState({
@@ -63,14 +63,14 @@ class LoginForm extends React.Component {
 
             setTimeout(() => {
                 new Typed("#password", password);
-            }, 1300);
+            }, 500);
 
             setTimeout(() => {
                 this.props.login({
                     username: "demo_user93",
                     password: "password93"
                 });
-            }, 2600
+            }, 990
             );
         });
     }

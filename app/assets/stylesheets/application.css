@@ -33,3 +33,10 @@
     left:0;
     right:0;
  }
+
+ 
+
+ input[type="submit"], button, a{
+   cursor: pointer;
+
+ }
