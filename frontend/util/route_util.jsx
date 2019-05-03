@@ -25,10 +25,27 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
     )} />
 );
 
+
+const GateKeeper = ({ component: Component, path, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        loggedIn ? (
+            <Component {...props} />
+        ) : (
+               null
+            )
+    )} />
+);
+
+
+
+
+
 const mapStateToProps = state => (
     { loggedIn: Boolean(state.session.id) }
 );
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+
+export const GateKeeperRoute = withRouter(connect(mapStateToProps)(GateKeeper));
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));

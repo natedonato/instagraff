@@ -19,9 +19,11 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6, allow_nil: true}
     
     after_initialize :ensure_session_token
+    before_validation :add_default_pic
     attr_reader :password
 
     has_one_attached :profile_pic
+
 
     def password=(password)
         @password = password
@@ -44,6 +46,14 @@ class User < ApplicationRecord
         self.session_token ||= make_unique_session_token()
     end
 
+    def ensure_profile_pic
+        self.profile_pic.attach( 
+            io: File.open('/'),
+            filename: 'avatar.jpg',
+            content_type: 'image/jpg',
+            )
+    end
+
     def reset_session_token!
         self.session_token = make_unique_session_token()
         self.save!
@@ -54,12 +64,17 @@ class User < ApplicationRecord
     private
 
     def make_unique_session_token
-    self.session_token = SecureRandom.urlsafe_base64
-    while User.find_by(session_token: self.session_token)
-      self.session_token = SecureRandom.urlsafe_base64
+        self.session_token = SecureRandom.urlsafe_base64
+            while User.find_by(session_token: self.session_token)
+                self.session_token = SecureRandom.urlsafe_base64
+            end
+        return self.session_token
     end
-    return self.session_token
-  end
 
+    private def add_default_pic
+    unless self.profile_pic.attached?
+         self.profile_pic.attach(io: File.open(Rails.root.join("app", "assets", "images", "avatar.jpeg")), filename: 'avatar.jepg' , content_type: "image/jpeg")
+        end
+    end
 
 end

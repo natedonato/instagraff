@@ -1,14 +1,48 @@
 .navbar{
-    height: 77px;
+    height: 52px;
+    box-sizing: border-box;
+    padding: 0px 20px;
     width: 100%;
     background-color: white;
     border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
 }
 
-.navbar > i {
+
+.navbar > a {
     font-size: 26px;
     box-sizing: border-box;
     padding: 0px 20px;
-    
-    border-right: 1px solid black;
+    color: black;
+    // border-right: 1px solid black;
+}
+
+
+.navbar-righticons{
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+
+.navbar-righticons > i
+{
+    padding: 0px 10px;
+    font-size: 24px;
+
+} 
+.navbar-righticons > a
+{
+    color: black;
+    padding: 0px 10px;
+    font-size: 24px;
+
+} 
+
+.contentpusher {
+width: 100%;
+height: 52px;
 }

@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem "aws-sdk-s3"
+gem 'normalize-rails'
 
 gem 'better_errors'
 gem 'binding_of_caller'

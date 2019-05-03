@@ -11,12 +11,23 @@ class NavBar extends React.Component {
         return (
             <>
                 <div className="navbar">
-                    <i className="fab fa-instagram"></i>
-
-
-                    Hey i'm a nav NavBar
+                    <Link to='/'>
+                        <i className="fab fa-instagram"></i>
+                    </Link>
+                    
+                    <div className="navbar-righticons">
+                    
+                        <i className="far fa-compass"></i>
+                        <i className="fa fa-plus"></i>
+                        <Link to={`/users/${this.props.currentUser.id}`}>
+                            <i className="far fa-user"></i>
+                        </Link>    
+                        
+                    
+                    </div>
                 </div>
-                <CurrentUserContainer />
+                <div className="contentpusher">
+                </div>
             </>
         );
     }
