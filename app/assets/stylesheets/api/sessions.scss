@@ -1,0 +1,161 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.loginform{
+    background-color: white;
+    width: 350px;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.loginformfooter{
+    background-color: white;
+    width: 350px;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    margin: 0 0 10px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+.loginerrors{
+    list-style: none;
+    padding-left: 0;
+    list-style-type:none;
+    color: red;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+.loginform > form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputfields{
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    margin: 3px auto;
+    overflow: hidden;
+    padding: 9px 0 7px 8px;
+    text-overflow: ellipsis;
+    background: #fafafa;
+    border-radius: 4px;
+    // position: relative;
+    width: 268px;
+    height: 30px;
+
+}
+
+.inputfields:focus{
+    outline-width: 0;
+    border: 1px solid #b1b1b1;
+
+}
+
+.or{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 236px;
+    background-color: #ffffff;
+    width: 20px;
+    padding: 2px 5px;
+    color: #5e5e5e;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    z-index: 3;
+}
+
+.orline {
+    width: 268px;
+    border-top: 1px solid #b1b1b1;
+    opacity: 0.5;
+    margin: 10px auto;
+}
+
+
+.submitbutton{
+    border: none;
+    background: #3897f0;
+    color: white;
+    width: 268px;
+    height: 30px;
+    padding: 5px 9px;
+    border-radius: 4px;
+    // position: relative;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 5px auto;
+}
+
+.demobutton{
+    border: none;
+    background: #f03838;
+    color: white;
+    width: 268px;
+    height: 30px;
+    padding: 5px 9px;
+    border-radius: 4px;
+    // position: relative;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 5px auto;
+}
+
+.signuplink{
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    color: #3897f0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+
+.instagraff {
+    color: rgb(27, 27, 27);
+    font-family: 'Cookie', cursive;
+    text-align: center;
+    font-size: 45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    margin: 0px 0px;
+}
+
+.wholelogin{
+    background: #fafafa;
+    display: flex;
+    width: fit-content;
+    margin: 5px auto;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginimage{
+    width: 425px;
+    height: auto;
+
+}
