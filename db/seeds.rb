@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'open-uri'
+# require 'open-uri'
 
 
-demo_user = User.create(username: "demo_user93", password: "password93")
-file = open('https://s3.amazonaws.com/instagraff-seeds/demouser.jpg')
+# demo_user = User.create(username: "demo_user93", password: "password93")
+# file = open('https://s3.amazonaws.com/instagraff-seeds/demouser.jpg')
 
-demo_user.profile_pic.attach(io: file, filename: 'demouser.jpg')
+# demo_user.profile_pic.attach(io: file, filename: 'demouser.jpg')
