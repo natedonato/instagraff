@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PhotoFormContainer from './photo_form_container';
 
 class ShowPhoto extends React.Component {
     constructor(props) {
@@ -7,7 +8,6 @@ class ShowPhoto extends React.Component {
     }
 
     componentDidMount(){
-        debugger;
         this.props.fetchPhoto(this.props.id);
     }
 
@@ -19,6 +19,7 @@ class ShowPhoto extends React.Component {
         }
         return (
             <div>
+                <PhotoFormContainer />
                 <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
             </div>
         );

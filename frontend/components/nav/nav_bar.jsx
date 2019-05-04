@@ -18,7 +18,10 @@ class NavBar extends React.Component {
                     <div className="navbar-righticons">
                     
                         <i className="far fa-compass"></i>
-                        <i className="fa fa-plus"></i>
+                        <Link to="/photos/new"> 
+                            <i className="fa fa-plus"></i>
+                        </Link>
+                        
                         <Link to={`/users/${this.props.currentUser.id}`}>
                             <i className="far fa-user"></i>
                         </Link>    

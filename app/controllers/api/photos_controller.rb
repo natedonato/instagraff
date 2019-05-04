@@ -4,7 +4,6 @@ class Api::PhotosController < ApplicationController
         @photo = Photo.new(photo_params)
         @photo.poster_id = current_user.id
         if @photo && @photo.save
-            login!(@photo)
             render :show
         else
             render json: @photo.errors.full_messages, status: 418
@@ -21,7 +20,7 @@ class Api::PhotosController < ApplicationController
     end
 
     def index
-        
+        @photos = Photo.all
     end
 
 

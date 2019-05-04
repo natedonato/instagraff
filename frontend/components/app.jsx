@@ -7,7 +7,8 @@ import { AuthRoute, ProtectedRoute, GateKeeperRoute } from '../util/route_util';
 import NavBarContainer from './nav/nav_bar_container';
 import CurrentUserContainer from './current_user/current_user_container';
 import ShowPhotoContainer from './photo/show_photo_container';
-
+import PhotoIndexContainer from './photo/photo_index_container';
+import PhotoFormContainer from './photo/photo_form_container';
 
 const App = () => (
     <>
@@ -19,8 +20,10 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <ProtectedRoute exact path="/users/:id" component={CurrentUserContainer} />
+            <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
             <ProtectedRoute exact path="/photos/:photoId" component={ShowPhotoContainer} />
-            <ProtectedRoute exact path="/" component={() => (<h1>hey</h1>)}/>
+            <ProtectedRoute exact path="/" component={PhotoIndexContainer}/>
+
             <Route component={() => (<><h1>Sorry, this page isn't available.</h1><br/> <h3>
                 Return to <Link to="/">Instagraff</Link>??</h3></>)} />
         </Switch>
