@@ -9,7 +9,7 @@ class Api::PhotosController < ApplicationController
             render json: @photo.errors.full_messages, status: 418
         end
     end
-
+ 
     def show
         @photo = Photo.find_by(id: params[:id])
         if @photo

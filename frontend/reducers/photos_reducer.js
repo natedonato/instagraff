@@ -7,10 +7,10 @@ const photosReducer = (oldState = {}, action) => {
     let newState = merge({}, oldState);
     switch (action.type) {
         case RECEIVE_PHOTO:
-            newState[action.photo.id] = action.photo;
+            newState[action.data.photo.id] = action.data.photo;
             return newState;
         case RECEIVE_PHOTOS:
-            newState = action.photos;
+            newState = action.data.photos;
             return newState;
         case REMOVE_PHOTO:
             newState[action.id] = null;
@@ -21,4 +21,4 @@ const photosReducer = (oldState = {}, action) => {
 };
 
 
-export default photosReducer;
+export default photosReducer;  

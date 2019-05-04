@@ -5,14 +5,14 @@ export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO'
 
-const receivePhoto = (photo) => ({
+const receivePhoto = (data) => ({
     type: RECEIVE_PHOTO,
-    photo: photo
+    data: data
 });
 
-const receivePhotos = (photos) => ({
+const receivePhotos = (data) => ({
     type: RECEIVE_PHOTOS,
-    photos: photos
+    data: data
 });
 
 const deletePhoto = (id) => ({
