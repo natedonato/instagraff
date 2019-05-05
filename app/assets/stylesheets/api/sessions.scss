@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+@media screen and (max-width: 600px) {
+  div.animatedLogo {
+    display: none;
+  }
+}
+
 //animation based on tutorial from snook.ca
 @keyframes animateLogo {
   0%   { opacity: 0; }
