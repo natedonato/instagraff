@@ -7,18 +7,21 @@ class EditProfilePicDisplay extends React.Component {
     }
 
     handleFile(e){
-        this.setState({photoFile: e.currentTarget.files[0]});
+        debugger;
+        this.setState({photoFile: e.currentTarget.files[0]}, ()=>{
+        const formData = new FormData();
+        formData.append('user[profile_pic]', this.state.photoFile);
+        this.props.updateUserPhoto(formData, this.props.currentUser.id);}
+        );
+
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
         const formData = new FormData();
         formData.append('user[profile_pic]', this.state.photoFile);
         this.props.updateUserPhoto(formData, this.props.currentUser.id);
-    }
-
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     const formData = new FormData();
-    //     formData.append('user[profile_pic]', this.state.photoFile);
-    //     this.props.updateUserPhoto(formData, this.props.currentUser.id);
-    // };
+    };
 
     render() {
         return (
