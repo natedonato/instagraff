@@ -14,7 +14,6 @@ class PhotoForm extends React.Component {
     handleFile(e) {
         this.setState({ 
             photoFile: e.currentTarget.files[0],
-            comment: ""
         });
     }
 
@@ -34,19 +33,39 @@ class PhotoForm extends React.Component {
         ));
     }
 
+    handleCancel(e){
+        e.preventDefault();
+        this.setState({
+            photoFile: null,
+            comment: ""
+        });
+
+    }
+
     render() {
+
         return (
-            <div>
-                <form action="">
+            <div className="photoFormContainer">
+                <div className="buttonContainer">
+                    <button className="cancelButton" onClick={this.handleCancel.bind(this)}>Cancel</button>
+                    <div className="photoFormHeader">New Photo Post</div>
+                    <input className="postButton" type="submit" value="Share" onClick={this.handleSubmit.bind(this)} />
+                </div>
+
+                <form className="photoForm" action="">
                     <input type="file" onChange={this.handleFile.bind(this)} />
-                    <input className="inputfields"
-                        type="text"
-                        value={`${this.state.comment}`}
-                        onChange={this.update("comment")}
-                        placeholder="Add Caption (optional)" />
-                    <input type="submit" value="submit" onClick={this.handleSubmit.bind(this)} />
-                </form>
+
+                </form> 
+                <div className="captionBox">
+                    <img className="postProfilePic" src={`${this.props.currentUser.picUrl}`} alt="" />
+            
+                    <textarea className="captionField" 
+                       value={`${this.state.comment}`}
+                       onChange={this.update("comment")}
+                        placeholder="Write a caption... (optional)" />
+                </div>
             </div>
+
         );
     }
 };
