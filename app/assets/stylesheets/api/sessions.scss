@@ -178,10 +178,12 @@
 .loginimage{
     display: flex;
     width: 425px;
-    height: auto;
+    // height: auto;
     top: 0;
     border: 0px;
     margin-bottom: -632px;
+    object-fit: cover;
+
 }
 
 
@@ -190,6 +192,8 @@
     animation-name: animateLogo; 
     animation-duration: 12s; 
     animation-iteration-count: infinite; 
+    border: 0px;
+
 }
 
 .animatedLogo img:nth-child(1) { animation-delay: 0s; }
