@@ -8,12 +8,15 @@ class UserProfile extends React.Component {
     }
 
     componentDidUpdate(){
+        if(this.props.users[this.props.id] === undefined){
+        this.props.fetchUser(this.props.id);
+        }
+    }
+
+    componentDidMount(){
         this.props.fetchUser(this.props.id);
     }
 
-    componentWillMount() {
-        this.props.fetchUser(this.props.id);
-    }
 
     render (){
         if (this.props.users[this.props.id] === undefined) {
