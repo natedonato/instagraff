@@ -9,9 +9,11 @@ import ShowPhotoContainer from './photo/show_photo_container';
 import PhotoIndexContainer from './photo/photo_index_container';
 import PhotoFormContainer from './photo/photo_form_container';
 import UserBox from './current_user/user_profile_contianer';
+import Modal from   './modal';
 
 const App = () => (
-    <>
+    <>  
+        <GateKeeperRoute component={Modal} />
         <header>
         </header> 
         <GateKeeperRoute component={NavBarContainer} />
@@ -20,7 +22,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <ProtectedRoute exact path="/users/:id" component={UserBox} />
-            <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
+            {/* <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} /> */}
             <ProtectedRoute exact path="/photos/:photoId" component={ShowPhotoContainer} />
             <ProtectedRoute exact path="/" component={PhotoIndexContainer}/>
 

@@ -39,7 +39,7 @@ class PhotoForm extends React.Component {
             photoFile: null,
             comment: ""
         });
-
+        this.props.closeModal();
     }
 
     render() {
