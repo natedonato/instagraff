@@ -21,24 +21,33 @@
 }
 
 .postHeader{
+    padding: 16px;
     margin-top: 30px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     background-color: white;
     border: 1px solid #e6e6e6;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
     width: 600px;
     height: 60px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 14px;
 }
 
+.posterUsername{
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
 .postProfilePic{
-    height: 40px;
-    width: 40px;
+    height: 34px;
+    width: 34px;
     border-radius: 100%;
     border: 1px solid #e6e6e6;
-    margin: 10px;
+    margin-right: 10px;
     object-fit: cover;
 }
 

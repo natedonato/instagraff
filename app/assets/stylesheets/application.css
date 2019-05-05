@@ -15,6 +15,11 @@
  *= require_self
  */
 
+ div{
+   color: #262626;
+
+ }
+
 
  body{
     background-color: #fafafa;
@@ -39,4 +44,8 @@
  input[type="submit"], button, a{
    cursor: pointer;
 
+ }
+
+ a {
+  text-decoration: none;
  }

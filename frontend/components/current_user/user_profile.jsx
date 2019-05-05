@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 class UserProfile extends React.Component {
     constructor(props) {
         super(props);
-        
+    }
+
+    componentDidUpdate(){
+        this.props.fetchUser(this.props.id);
     }
 
     componentWillMount() {

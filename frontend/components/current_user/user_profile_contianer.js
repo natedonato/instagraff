@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
@@ -19,7 +19,26 @@ const mapDispatchToProps = dispatch => ({
     fetchUser: (id) => dispatch(fetchUser(id))
 });
 
+class UserBox extends React.Component {
+
+    componentDidMount() {
+        fetchUser(this.props.id);
+    }
+
+    render() {
+        const { id, currentUser, users, fetchUser, logout } = this.props;
+        return (
+            <UserProfile
+                id={id}
+                currentUser={currentUser}
+                users={users}
+                fetchUser={fetchUser}
+                logout={logout}
+                />
+        );
+    }
+}
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(UserProfile);
+)(UserBox);

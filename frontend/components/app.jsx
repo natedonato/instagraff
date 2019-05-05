@@ -8,7 +8,7 @@ import NavBarContainer from './nav/nav_bar_container';
 import ShowPhotoContainer from './photo/show_photo_container';
 import PhotoIndexContainer from './photo/photo_index_container';
 import PhotoFormContainer from './photo/photo_form_container';
-import UserProfileContainer from './current_user/user_profile_contianer';
+import UserBox from './current_user/user_profile_contianer';
 
 const App = () => (
     <>
@@ -19,7 +19,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LoginContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
-            <ProtectedRoute exact path="/users/:id" component={UserProfileContainer} />
+            <ProtectedRoute exact path="/users/:id" component={UserBox} />
             <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
             <ProtectedRoute exact path="/photos/:photoId" component={ShowPhotoContainer} />
             <ProtectedRoute exact path="/" component={PhotoIndexContainer}/>

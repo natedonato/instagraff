@@ -10,6 +10,10 @@
     justify-content: space-between;
     position: fixed;
     top: 0;
+    color: #262626;
+    font-weight: 100;
+
+
 }
 
 
@@ -17,7 +21,10 @@
     font-size: 26px;
     box-sizing: border-box;
     padding: 0px 20px;
-    color: black;
+    // color: black;
+    color: #262626;
+    font-weight: 100;
+
     // border-right: 1px solid black;
 }
 
@@ -25,22 +32,35 @@
 .navbar-righticons{
     box-sizing: border-box;
     padding: 0px 20px;
+    color: hsl(0, 0%, 15%);
+    font-weight: 100;
+
 }
 
 
 .navbar-righticons > i
 {
     padding: 0px 10px;
+    color: #262626;
+
     font-size: 24px;
+    font-weight: 100;
+
 
 } 
 .navbar-righticons > a
 {
-    color: black;
+    // color: black;
+    color: #262626;
+
     padding: 0px 10px;
     font-size: 24px;
+    font-weight: 100;
+
 
 } 
+
+
 
 .contentpusher {
 width: 100%;
