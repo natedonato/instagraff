@@ -21,8 +21,7 @@ class PhotoIndex extends React.Component {
             <div>
                 <ul>
                     {Object.values(this.props.photos).map(photo => (
-                        <PhotoIndexItem photo={photo} key={photo.id} />
-
+                        <PhotoIndexItem photo={photo} key={photo.id} user={this.props.users[photo.poster_id]}/>
                     ))}
                 </ul>
             </div>
