@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user);
-    }
+    } 
 
     renderErrors() {
         return (
@@ -78,8 +78,11 @@ class LoginForm extends React.Component {
     render(){
         return(
         <div className="wholelogin">
-            <div >
+            <div className='animatedLogo'>
                 <img className="loginimage" src='/loginimage.png' />
+                <img className="loginimage" src='/loginimage1.png' />
+                <img className="loginimage" src='/loginimage2.png' />
+                <img className="loginimage" src='/loginimage3.png' />
             </div>
             <div className="loginwrapper">
                 <div className="loginform">

@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//animation based on tutorial from snook.ca
+@keyframes animateLogo {
+  0%   { opacity: 0; }
+  8.33%   { opacity: 1; }
+  25%  { opacity: 1; }
+  44.44%  { opacity: 0; }
+  100% { opacity: 0; }
+}
 
 .loginform{
     background-color: white;
@@ -157,10 +165,31 @@
     margin: 5px auto;
     align-items: center;
     height: 100vh;
+    border: 0px;
+}
+
+.animatedLogo{
+    width: 425px;
+    border: 0px;
 }
 
 .loginimage{
     width: 425px;
     height: auto;
-
+    position: absolute;
+    top: 0;
+    border: 0px;
 }
+
+
+.animatedLogo > img { 
+    opacity:0; 
+    animation-name: animateLogo; 
+    animation-duration: 12s; 
+    animation-iteration-count: infinite; 
+}
+
+.animatedLogo img:nth-child(1) { animation-delay: 0s; }
+.animatedLogo img:nth-child(2) { animation-delay: 3s; }
+.animatedLogo img:nth-child(3) { animation-delay: 6s; }
+.animatedLogo img:nth-child(4) { animation-delay: 9s; }
