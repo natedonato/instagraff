@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProfileForm from '../current_user/profile_form';
+import EditProfilePicDisplay from './edit_profile_pic_display';
 import { updateUserPhoto } from '../../actions/user_actions';
 
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ProfileForm);
+)(EditProfilePicDisplay);

@@ -2,10 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.wholeProfileContainer{
+    width: 935;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+//profile pic stuff
 .profilePic{
     border-radius: 100%;
-    height: 150;
+    height: 150px;
     width: 150px;
     border: 1px solid #e6e6e6;
+}
 
+.profilePicEdit{
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    border: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+#newProfilePic{
+    display: none;
 }

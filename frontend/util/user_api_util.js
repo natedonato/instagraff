@@ -1,5 +1,14 @@
 
-const updateUserPhoto = (formData, id) => (
+
+export const fetchUser = (id) => (
+    $.ajax({
+        method: "get",
+        url: `api/users/${id}}`,
+    })
+);
+
+
+export const updateUserPhoto = (formData, id) => (
     $.ajax({
         method: "patch",
         url: `api/users/${id}}`,
@@ -8,5 +17,3 @@ const updateUserPhoto = (formData, id) => (
         processData: false
     })
 );
-
-export default updateUserPhoto;
