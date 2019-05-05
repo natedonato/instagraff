@@ -170,15 +170,18 @@
 
 .animatedLogo{
     width: 425px;
+    height: 633px;
     border: 0px;
+    position: static;
 }
 
 .loginimage{
+    display: flex;
     width: 425px;
     height: auto;
-    position: absolute;
     top: 0;
     border: 0px;
+    margin-bottom: -632px;
 }
 
 
