@@ -10,9 +10,9 @@ class PhotoIndexItem extends React.Component {
                 {this.props.user.username}
                 {this.props.photo.poster_id}
             </div>
-            <div className="postBox">
+            {/* <div className="postBox"> */}
                 <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
-            </div>
+            {/* </div> */}
             </>
         )
     }
