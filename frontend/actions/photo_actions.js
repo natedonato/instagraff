@@ -17,11 +17,11 @@ const receivePhotos = (data) => ({
 
 const deletePhoto = (id) => ({
     type: REMOVE_PHOTO,
-    id
+    id: id,
 });
 
 const receivePhotoErrors = (errors) => ({
-    type: RECEIVE_PHOTO_ERRORS,
+    type: RECEIVE_PHOTO_ERRORS, 
     errors: errors
 });
 
@@ -39,5 +39,5 @@ export const fetchPhotos = () => (dispatch) => (
 );
 
 export const removePhoto = (id) => (dispatch) => (
-    APIUtil.removePhoto(id).then((id) => dispatch(deletePhoto(id)), errors => (dispatch(receivePhotoErrors(errors.responseJSON))))
+    APIUtil.removePhoto(id).then(() => dispatch(deletePhoto(id)), errors => (dispatch(receivePhotoErrors(errors.responseJSON))))
 );

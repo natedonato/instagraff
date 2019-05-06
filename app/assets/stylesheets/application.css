@@ -40,15 +40,21 @@
     right:0;
  }
 
- 
+ label{
+   cursor: pointer;
+ }
+
+  input[type="file"]{
+   cursor: pointer;
+ }
 
  input[type="submit"], button, a{
    cursor: pointer;
-
  }
 
  a {
   text-decoration: none;
+   cursor: pointer;
  }
 
 
@@ -67,6 +73,8 @@
 
 .modal-child {
   position: absolute;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 

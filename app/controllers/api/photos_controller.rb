@@ -15,7 +15,7 @@ class Api::PhotosController < ApplicationController
         if @photo
             render :show
         else
-            render json: @photo.errors.full_messages, status: 418
+            render json: ["Post #{params[:id]} not found"], status: 404
         end
     end
 
@@ -27,9 +27,11 @@ class Api::PhotosController < ApplicationController
     def destroy
         @photo = Photo.find_by(id: params[:id])
         if @photo
-            if current_user.photos.includes?(@photo)
+            if current_user.photos.include?(@photo)
                 @photo.destroy!
                 render json: {}
+            else
+                render json: ["Invalid request: photo belongs to another user"], status: 401
             end
         else
             render json: ["Couldn't find photo to delete"], status: 404

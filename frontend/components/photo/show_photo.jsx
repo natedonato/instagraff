@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PhotoFormContainer from './photo_form_container';
+import { withRouter } from 'react-router-dom';
 
 class ShowPhoto extends React.Component {
     constructor(props) {
@@ -11,12 +11,15 @@ class ShowPhoto extends React.Component {
             if (this.props.photo === undefined) {
                 this.props.fetchPhoto(this.props.id);
             }
-    }
+    } 
 
     componentDidUpdate(){
-        if(this.props.photo === undefined){
-        this.props.fetchPhoto(this.props.id);
-    }
+        if (this.props.errors) {
+            this.props.history.push(`/users/${this.props.currentUser.id}`);
+        }
+        else if(this.props.photo === undefined){
+        this.props.fetchPhoto(this.props.id);}
+
     }
 
     render() {
@@ -43,4 +46,4 @@ class ShowPhoto extends React.Component {
 };
 
 
-export default ShowPhoto;    
+export default withRouter(ShowPhoto);    

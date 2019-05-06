@@ -7,16 +7,18 @@ class PhotoIndexItem extends React.Component {
         return(
             <>
             <div className="postHeader">
+                <div>
                 <Link className="userInfoPic" to={`/users/${this.props.user.id}`}>
                     <img src={`${this.props.user.picUrl}`} className='postProfilePic' alt=""/>
                 </Link>
                 <Link className="userInfo" to={`/users/${this.props.user.id}`}>
                     <div className="posterUsername">{this.props.user.username}</div>
                 </Link>
+                </div>
+                <i className="fas fa-ellipsis-h" />
             </div>
-            {/* <div className="postBox"> */}
-                <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
-            {/* </div> */}
+            <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
+
             </>
         )
     }
