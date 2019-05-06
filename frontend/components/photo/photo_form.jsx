@@ -6,16 +6,21 @@ class PhotoForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            photoFile: null,
+            photoFile: props.data.photoFile,
             comment: ""
         };
+
+        const file = props.data.photoFile;
+        const fileReader = new FileReader();
+
+        fileReader.onloadend = () => {
+            this.setState({ previewUrl: fileReader.result });
+        };
+
+        fileReader.readAsDataURL(file);
+        
     }
 
-    handleFile(e) {
-        this.setState({ 
-            photoFile: e.currentTarget.files[0],
-        });
-    }
 
     update(field) {
         return (
@@ -29,8 +34,9 @@ class PhotoForm extends React.Component {
             alert("Upload Failed - No Photo File Detected! \n \t Please make sure you have attached a photo and try again. \t");}
         const formData = new FormData();
         formData.append('photo[pic]', this.state.photoFile);
-        this.props.postPhoto(formData).then((result) => this.props.history.push(`/photos/${result.data.photo.id}`
-        ));
+        this.props.postPhoto(formData).then((result) => {this.props.closeModal();
+            this.props.history.push(`/photos/${result.data.photo.id}`);
+        });
     }
 
     handleCancel(e){
@@ -51,11 +57,7 @@ class PhotoForm extends React.Component {
                     <div className="photoFormHeader">New Photo Post</div>
                     <input className="postButton" type="submit" value="Share" onClick={this.handleSubmit.bind(this)} />
                 </div>
-
-                <form className="photoForm" action="">
-                    <input type="file" onChange={this.handleFile.bind(this)} />
-
-                </form> 
+                <img className="previewPostImage" src={this.state.previewUrl} />
                 <div className="captionBox">
                     <img className="postProfilePic" src={`${this.props.currentUser.picUrl}`} alt="" />
             

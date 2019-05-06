@@ -12,9 +12,9 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.name) {
         case 'photoForm':
-            component = <PhotoFormContainer />;
+            component = <PhotoFormContainer data={modal.data}/>;
             break;
         // case 'signup':
         //     component = <SignupFormContainer />;

@@ -21,7 +21,7 @@ class UserProfile extends React.Component {
     render (){
         if (this.props.users[this.props.id] === undefined) {
             return (
-                <h1> LOADING</h1>            
+                <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>      
             )
         }
         let renderUserInfo = () => {

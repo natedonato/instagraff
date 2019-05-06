@@ -7,7 +7,6 @@ class EditProfilePicDisplay extends React.Component {
     }
 
     handleFile(e){
-        debugger;
         this.setState({photoFile: e.currentTarget.files[0]}, ()=>{
         const formData = new FormData();
         formData.append('user[profile_pic]', this.state.photoFile);

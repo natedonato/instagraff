@@ -34,12 +34,15 @@
     padding: 0px 20px;
     color: hsl(0, 0%, 15%);
     font-weight: 100;
-
+    display: flex;
+    flex-wrap: none;
+    align-items: center;
 }
 
 
 .navbar-righticons > i
 {
+    
     padding: 0px 10px;
     color: #262626;
 
@@ -56,13 +59,24 @@
     padding: 0px 10px;
     font-size: 24px;
     font-weight: 100;
-
-
 } 
 
+.navbar-righticons > form > label{
+    // color: black;
+    color: #262626;
+
+    padding: 0px 10px;
+    font-size: 24px;
+    font-weight: 100;
+
+}
 
 
 .contentpusher {
 width: 100%;
 height: 52px;
+}
+
+#uploadPhoto{
+    display: none;
 }

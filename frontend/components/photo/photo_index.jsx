@@ -14,7 +14,7 @@ class PhotoIndex extends React.Component {
     render() {
         if (this.props.photos === {}) {
             return (
-                <h1> LOADING</h1>
+                <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             )
         }
         return (

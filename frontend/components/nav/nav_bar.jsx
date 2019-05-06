@@ -6,28 +6,33 @@ class NavBar extends React.Component {
         super(props);
     }
 
-    handlePost(e) {
-        e.preventDefault();
-
-
-
-
-
-    }
-    
-
+    handleFile(e) {
+        this.props.openModal({
+            photoFile: e.currentTarget.files[0],
+        });
+    }    
+ 
     render() {
         return (
             <>
+                
                 <div className="navbar">
                     <Link to='/'>
                         <i className="fab fa-instagram"></i>
                     </Link>
                     
                     <div className="navbar-righticons">
-                    
                         <i className="far fa-compass"></i>
-                        <i className="fa fa-plus" onClick={this.props.openModal} />
+
+                        <form action="">
+                            <label htmlFor="uploadPhoto" title='Upload New Photo' alt='Upload New Photo'>
+                                <i className="fa fa-plus" />
+
+                            </label>
+
+                            <input type="file" id="uploadPhoto" onChange={this.handleFile.bind(this)} />
+                        </form>
+
     
                         <Link to={`/users/${this.props.currentUser.id}`}>
                             <i className="far fa-user"></i>
