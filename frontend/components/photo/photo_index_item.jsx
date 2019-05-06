@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 class PhotoIndexItem extends React.Component {
 
+    handleOptions(e) {
+    e.preventDefault();
+    this.props.openModal(
+        this.props.photo
+    );
+    }
+
     render(){
         return(
             <>
@@ -15,7 +22,7 @@ class PhotoIndexItem extends React.Component {
                     <div className="posterUsername">{this.props.user.username}</div>
                 </Link>
                 </div>
-                <i className="fas fa-ellipsis-h" />
+                <i className="fas fa-ellipsis-h" onClick={this.handleOptions.bind(this)}/>
             </div>
             <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
 
@@ -25,5 +32,3 @@ class PhotoIndexItem extends React.Component {
 };
 
 export default PhotoIndexItem;
-
-

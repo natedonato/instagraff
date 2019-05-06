@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 // import SignupFormContainer from '../session_form/signup_form_container';
 
 import PhotoFormContainer from './photo/photo_form_container';
+import PhotoOptionsContainer from './photo/photo_options_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -14,11 +15,11 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal.name) {
         case 'photoForm':
-            component = <PhotoFormContainer data={modal.data}/>;
+            component = <PhotoFormContainer data={modal.data} />;
             break;
-        // case 'signup':
-        //     component = <SignupFormContainer />;
-        //     break;
+        case 'photoOptions':
+            component = <PhotoOptionsContainer photo={modal.data} />;
+            break;
         default:
             return null;
     }
