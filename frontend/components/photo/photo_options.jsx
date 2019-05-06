@@ -13,6 +13,14 @@ class PhotoOptions extends React.Component {
         this.setState({ confirmation: true })
     }
 
+    submitDelete(){
+        this.props.removePhoto(this.props.photo.id)
+            .then(()=>{
+                this.props.closeModal();
+        
+            });
+        }
+
     showDelete(){
         if(this.props.photo.poster_id !== this.props.currentUser){
             return;
@@ -25,24 +33,37 @@ class PhotoOptions extends React.Component {
             )
         }
 
-    }
+        }
 
     render(){
         if(this.state.confirmation === false){
-        return(
-            <>
-            <Link className="optionsHead" to={`/photos/${this.props.photo.id}`} onClick={this.props.closeModal}>Go to post</Link>
-            {this.showDelete()}
-            <div className="optionsFoot" onClick={this.props.closeModal}>
-                Cancel
-            </div>
-            </>
-            )
-        } else{
             return(
-                <div />
+                <>
+                    <Link className="optionsHead" to={`/photos/${this.props.photo.id}`} onClick={this.props.closeModal}>Go to post</Link>
+                    {this.showDelete()}
+                    <div className="optionsFoot" onClick={this.props.closeModal}>
+                        Cancel
+                    </div>
+                </>
             )
         }
-    }
+        if (this.state.confirmation === true) {
+            return(
+                <>
+                <div className="optionsDeleteHead"> 
+                <img src={`${this.props.photo.picUrl}`} className="deletePreview"/>
+                <br></br>
+                Delete this post? </div>
+                <div className="optionsMiddle" onClick={this.submitDelete.bind(this)}>
+                    Delete
+                </div>
+                <div className="optionsFoot" onClick={this.props.closeModal}>
+                    Cancel
+                </div>
+                </>
+            )
+        }
+    }        
 }
+
 export default withRouter(PhotoOptions);
