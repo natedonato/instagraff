@@ -4,12 +4,12 @@ import React from 'react';
 class FeedComments extends React.Component {
     constructor(props) {
         super(props);
+        const date = new Date(this.props.date).toString().slice(0, 10).toUpperCase();
         this.state = {
             body: "",
             photo_id: this.props.photo_id,
+            date: date
         };
-        const date = new Date(this.props.date).toString().slice(0, 10).toUpperCase();
-        this.state={date: date};
     }
 
 
