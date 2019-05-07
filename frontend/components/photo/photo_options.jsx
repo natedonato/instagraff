@@ -17,7 +17,7 @@ class PhotoOptions extends React.Component {
         this.props.removePhoto(this.props.photo.id)
             .then(()=>{
                 this.props.closeModal();
-        
+                this.props.history.push(`/users/${this.props.currentUser}`);
             });
         }
 

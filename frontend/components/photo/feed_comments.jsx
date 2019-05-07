@@ -19,6 +19,13 @@ class FeedComments extends React.Component {
         );
     }
 
+    handleKeyPress(e){
+        if (event.key === 'Enter' && !event.shiftKey) {
+            this.handleSubmit(e);
+        }
+        
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
@@ -56,6 +63,7 @@ class FeedComments extends React.Component {
                         value={`${this.state.body}`}
                         onChange={this.update("body")}
                         placeholder="Add a comment..." 
+                        onKeyPress={this.handleKeyPress.bind(this)}
                     />
                     {postButton()}
                 </div>

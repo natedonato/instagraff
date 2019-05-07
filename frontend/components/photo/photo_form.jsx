@@ -28,6 +28,14 @@ class PhotoForm extends React.Component {
         );
     }
 
+
+    handleKeyPress(e) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            this.handleSubmit(e);
+        }
+
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         if(this.state.photoFile === null){
@@ -66,10 +74,10 @@ class PhotoForm extends React.Component {
                 <img className="previewPostImage" src={this.state.previewUrl} />
                 <div className="captionBox">
                     <img className="postProfilePic" src={`${this.props.currentUser.picUrl}`} alt="" />
-            
                     <textarea className="captionField" 
                        value={`${this.state.comment}`}
                        onChange={this.update("comment")}
+                        onKeyPress={this.handleKeyPress.bind(this)}
                         placeholder="Write a caption... (optional)" />
                 </div>
             </div>
