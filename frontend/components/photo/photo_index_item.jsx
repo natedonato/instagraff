@@ -9,7 +9,7 @@ class PhotoIndexItem extends React.Component {
     this.props.openModal(
         this.props.photo
     );
-    }
+      }
 
     render(){
         return(
@@ -27,7 +27,7 @@ class PhotoIndexItem extends React.Component {
             </div>
           
             <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
-            <FeedCommentsContainer key={this.props.photo.id} photo_id={this.props.photo.id} comment_ids={this.props.photo.comment_ids} />
+            <FeedCommentsContainer date={this.props.photo.created_at} key={this.props.photo.id} photo_id={this.props.photo.id} comment_ids={this.props.photo.comment_ids} />
             </>
         )
     }

@@ -8,6 +8,8 @@ class FeedComments extends React.Component {
             body: "",
             photo_id: this.props.photo_id,
         };
+        const date = new Date(this.props.date).toString().slice(0, 10).toUpperCase();
+        this.state={date: date};
     }
 
 
@@ -40,13 +42,14 @@ class FeedComments extends React.Component {
                 <div className="commentList">
                     {this.props.comment_ids.map((id) => (
                         <div className="comment" key={id}>
-                            <span class="posterUsername">
+                            <span className="posterUsername">
                                 {this.props.users[this.props.comments[id].author_id].username}</span>
                             {this.props.comments[id].body}
                         </div>
                     ))}
-
+                    <div className="date">{this.state.date}</div>
                 </div> 
+
                 <div className="commentFieldBox">
                     <textarea rows='1' className="commentField"
                         value={`${this.state.body}`}

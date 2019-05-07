@@ -72,7 +72,6 @@
 }
 
 .modal-child {
-  position: absolute;
   max-height: 100%;
   max-width: 100%;
 }

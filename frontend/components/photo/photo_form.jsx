@@ -34,7 +34,13 @@ class PhotoForm extends React.Component {
             alert("Upload Failed - No Photo File Detected! \n \t Please make sure you have attached a photo and try again. \t");}
         const formData = new FormData();
         formData.append('photo[pic]', this.state.photoFile);
-        this.props.postPhoto(formData).then((result) => {this.props.closeModal();
+        this.props.postPhoto(formData).then((result) => {
+            this.props.closeModal();
+                if(this.state.comment !== ""){
+                    const comment = { body: this.state.comment,
+                    photo_id: result.data.photo.id };
+                    this.props.createComment(comment);
+                }
             this.props.history.push(`/photos/${result.data.photo.id}`);
         });
     }
