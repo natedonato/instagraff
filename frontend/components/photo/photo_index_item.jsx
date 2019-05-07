@@ -27,9 +27,7 @@ class PhotoIndexItem extends React.Component {
             </div>
           
             <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
-            <div className="postFooter"> 
             <FeedCommentsContainer key={this.props.photo.id} photo_id={this.props.photo.id} comment_ids={this.props.photo.comment_ids} />
-            </div>
             </>
         )
     }

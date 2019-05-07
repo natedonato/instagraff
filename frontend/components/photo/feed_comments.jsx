@@ -20,27 +20,42 @@ class FeedComments extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
+        this.setState({ body: "" });
     }
 
     render() {
+
+        const postButton = () =>{
+            if(this.state.body === ""){
+                return(<div style={ {opacity: 0.6} }    
+                        className = "postButton" > Post</div >
+                )
+                }
+            return(
+                <div onClick={this.handleSubmit.bind(this)} className="postButton">Post</div>
+            )
+        }
         return (
-            <>
+            <div className="postFooterComments"> 
                 <div className="commentList">
                     {this.props.comment_ids.map((id) => (
-                        <div key={id}>
-                            {this.props.users[this.props.comments[id].author_id].username}
+                        <div className="comment" key={id}>
+                            <span class="posterUsername">
+                                {this.props.users[this.props.comments[id].author_id].username}</span>
                             {this.props.comments[id].body}
                         </div>
                     ))}
 
+                </div> 
+                <div className="commentFieldBox">
+                    <textarea rows='1' className="commentField"
+                        value={`${this.state.body}`}
+                        onChange={this.update("body")}
+                        placeholder="Add a comment..." 
+                    />
+                    {postButton()}
                 </div>
-                <textarea rows="1" className="commentField"
-                    value={`${this.state.body}`}
-                    onChange={this.update("body")}
-                    placeholder="Add a comment..." 
-                />
-                <div onClick={this.handleSubmit.bind(this)} className="postButton">Post</div>
-            </>
+            </div>
         );
     }
 };
