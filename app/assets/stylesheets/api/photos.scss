@@ -83,7 +83,8 @@
 }
 .commentList{
     width: 100%;
-
+    background-color: white;
+    
 }
 
 .comment{
@@ -94,6 +95,8 @@
     padding-right: 2px;
     padding-bottom: 6px;
     white-space: pre-line;
+    background-color: white;
+
 }
 
 .date{
@@ -309,6 +312,7 @@
     background-color: white;
     display: flex;
     flex-direction: column; 
+    overflow: scroll;
 }
 
 .sideBarHeader{
@@ -412,4 +416,6 @@
 
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+
 }
