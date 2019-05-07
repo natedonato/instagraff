@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media screen and (max-width: 600px) {
-  div.postBox, div.postHeader, img.postPic, div.photoFormContainer{
+  div.postBox, div.postHeader, div.postFooter, img.postPic, div.photoFormContainer{
     width: 100%;
   }
 }
+
+
  
 
 .postBox{
@@ -35,6 +37,37 @@
     height: 60px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 14px;
+}
+
+.postFooter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    width: 600px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+.commentField{
+    padding: 16px;
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    max-height: 200px;
+    resize: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    background: inherit;
+}
+
+.commentField:focus{
+    outline-width: 0;
 }
 
 .postHeader > div{
@@ -76,25 +109,11 @@
 }
 
 
-
-// .postButton{
-//     border: none;
-//     background: #3897f0;
-//     color: white;
-//     width: 47px;
-//     height: 30px;
-//     padding: 5px 9px;
-//     border-radius: 4px;
-//     // position: relative;
-//     font-weight: 600;
-//     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-//     font-size: 14px;
-//     line-height: 18px;
-//     margin: 5px auto;
-//     outline-width: 0;
-// }
 .postButton{
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #3897f0;
     width: 67px;
     height: 30px;
@@ -202,14 +221,12 @@
 
 
 
-///
-
 .photoShow{
     display: flex;
-    // margin: -52px;
     align-self: center;
     flex-wrap: nowrap;
-    height: 600px;
+    max-height: 100%;
+    max-width: 100%;
     z-index: 3;
     border: 1px solid #e6e6e6;
     border-left: none;
@@ -217,13 +234,16 @@
 
 .photoShow > img {
     
-    height: 100%;
+    max-height: calc(100vh - 150px);
+    max-width: calc(100vw - 302px);
+    height: auto;
     width: auto;
-
+    object-fit: contain;
 }
 
 .sideBarHeader{
-    width: 355px;
+    width: 302px;
+    height: 100%;
     background-color: white;
 
 }
@@ -270,7 +290,7 @@
     margin-top: 10px;
 }
 
-
+  
 .optionsFoot{
     display: flex;
     align-items: center;

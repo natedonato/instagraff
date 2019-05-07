@@ -5,7 +5,7 @@ import Root from './components/root';
 
 //test functions
 import * as ApiUtil from './util/photo_api_util';
-import * as Actions from './actions/photo_actions';
+import * as Actions from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let root = document.getElementById('root');

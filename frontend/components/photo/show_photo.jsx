@@ -14,12 +14,8 @@ class ShowPhoto extends React.Component {
     } 
 
     componentDidUpdate(){
-        if (this.props.errors) {
-            this.props.history.push(`/users/${this.props.currentUser.id}`);
-        }
-        else if(this.props.photo === undefined){
+        if(this.props.photo === undefined){
         this.props.fetchPhoto(this.props.id);}
-
     }
 
     render() {
@@ -39,7 +35,7 @@ class ShowPhoto extends React.Component {
                     <Link className="userInfo" to={`/users/${this.props.user.id}`}>
                         <div className="posterUsername">{this.props.user.username}</div>
                     </Link>
-                </div>
+                </div>  
             </div>
         );
     }

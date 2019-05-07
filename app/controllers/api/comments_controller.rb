@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.author_id = current_user.id
         if @comment.save
-            render json: {}
+            render :show
         else
             render json: @comment.errors.full_messages, status: 404
         end
