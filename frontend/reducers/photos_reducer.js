@@ -8,8 +8,7 @@ const photosReducer = (oldState = {}, action) => {
     let newState = merge({}, oldState);
     switch (action.type) {
         case RECEIVE_COMMENT:
-            let pid = action.comment.photo_id;
-            newState[pid].comment_ids.concat(action.comment.id);
+            newState[action.comment.photo_id].comment_ids = newState[action.comment.photo_id].comment_ids.concat(action.comment.id);
             return newState;
         case RECEIVE_PHOTO:
             newState[action.data.photo.id] = action.data.photo;
