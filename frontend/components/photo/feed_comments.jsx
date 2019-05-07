@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class FeedComments extends React.Component {
     constructor(props) {
@@ -47,7 +47,8 @@ class FeedComments extends React.Component {
                             {this.props.comments[id].body}
                         </div>
                     ))}
-                    <div className="date">{this.state.date}</div>
+
+                    <div className="date" ><Link to={`/photos/${this.props.photo_id}`}>{this.state.date}</Link></div>
                 </div> 
 
                 <div className="commentFieldBox">
