@@ -8,13 +8,16 @@ const commentsReducer = (oldState = {}, action) => {
     let newState = merge({}, oldState);
     switch (action.type) {
         case RECEIVE_PHOTO:
+            if(action.data.comments){
             let comments = action.data.comments;
             newState = merge(comments, oldState);
+            }
             return newState;
         case RECEIVE_PHOTOS:
+            if(action.data.comments){
             Object.values(action.data.comments).map(comment => (
                 newState[comment.id] = comment
-            ));
+            ));}
             return newState;
 
         case RECEIVE_COMMENT:
