@@ -50,16 +50,19 @@ class EditProfile extends React.Component {
     }
 
     submitButton(){
+        let style = { marginTop: "10px",
+        marginBottom: "-20px"}
+
         if (this.state.username === this.props.currentUser.username &&
             this.state.email === this.props.currentUser.email &&
             this.state.bio === this.props.currentUser.bio
         ) {
             return (<div style={{ opacity: 0.6 }}
-                className="postButton" >Submit Changes</div >
+                className="postButton" style={ style }>Submit Changes</div >
             )
         }
         return (
-            <div onClick={this.handleSubmit.bind(this)} className="postButton">Submit Changes</div>
+            <div onClick={this.handleSubmit.bind(this)} style={style} className="postButton">Submit Changes</div>
         )
     }
 
