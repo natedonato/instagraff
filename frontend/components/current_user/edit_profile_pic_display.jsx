@@ -26,7 +26,7 @@ class EditProfilePicDisplay extends React.Component {
         return (
             <div>
                <form action="">
-                    <label htmlFor="newProfilePic" title='Change Profile Photo' alt='Change Profile Photo'>
+                    <label style={{fontSize: "0px"}} htmlFor="newProfilePic" title='Change Profile Photo' alt='Change Profile Photo'>
                         <img className="profilePicEdit" src={`${this.props.currentUser.picUrl}`} alt="Change Profile Photo" />
                     </label>
 

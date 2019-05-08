@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ShowPhoto from './show_photo';
 import { createComment, deleteComment } from '../../actions/comment_actions';
 import { fetchPhoto } from '../../actions/photo_actions';
+import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
 
 
@@ -25,6 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     fetchPhoto: (id) => (dispatch(fetchPhoto(id))),
+    fetchUser: (id) => (dispatch(fetchUser(id))),
     createComment: (comment) => dispatch(createComment(comment)),
     deleteComment: (id) => dispatch(deleteComment(id)),
     openModal: (id) => dispatch(openModal('photoOptions', id)),

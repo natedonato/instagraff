@@ -7,7 +7,7 @@ import CommentOptionsContainer from './comments/comment_options_container';
 
 import PhotoFormContainer from './photo/photo_form_container';
 import PhotoOptionsContainer from './photo/photo_options_container';
-
+import UserOptionsModalContainer from './current_user/user_options_modal_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -23,6 +23,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'commentOptions':
             component = <CommentOptionsContainer data={modal.data} />
+            break;
+        case 'userOptions':
+            component = <UserOptionsModalContainer data={modal.data} />
             break;
         default:
             return null;

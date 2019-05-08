@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { fetchUser } from '../../util/user_api_util';
 
 class FeedComments extends React.Component {
     constructor(props) {
@@ -40,12 +41,17 @@ class FeedComments extends React.Component {
     }
 
     displayComment(id){
+        if(this.props.users[this.props.comments[id].author_id] === undefined){
+            this.props.fetchUser(this.props.comments[id].author_id);
+        }
+        else{
         return(
         <div className="comment" key={id}>
         <Link to={`/users/${this.props.comments[id].author_id}`} className="posterUsername">
             {this.props.users[this.props.comments[id].author_id].username} </Link>
         { this.props.comments[id].body }
         </div>)
+        }
     }
 
     viewMore(){

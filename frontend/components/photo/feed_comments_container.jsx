@@ -1,5 +1,6 @@
 import FeedComments from './feed_comments';
 import { createComment, deleteComment } from '../../actions/comment_actions';
+import {fetchUser } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     createComment: (comment) => dispatch(createComment(comment)),
-    deleteComment: (id) => dispatch(deleteComment(id))
+    deleteComment: (id) => dispatch(deleteComment(id)),
+    fetchUser: (id) => dispatch(fetchUser(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedComments);

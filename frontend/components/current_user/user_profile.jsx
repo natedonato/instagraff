@@ -17,6 +17,10 @@ class UserProfile extends React.Component {
         this.props.fetchUser(this.props.id);
     }
 
+    editProfileModal(){
+        this.props.openModal(this.props.id);
+    }
+
 
     render (){
         if (this.props.users[this.props.id] === undefined) {
@@ -29,20 +33,26 @@ class UserProfile extends React.Component {
                 return(
                 <div>
                     <EditProfilePicContainer currentUser={this.props.currentUser} />
-                    <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 </div>)
             } else {
                 let user = this.props.users[this.props.id]
                 return(
                     <div>
-                        <img className="profilePic" src={`${user.picUrl}`} alt="" />
+                        <img className="profilePic" style={{ objectFit: "cover"}}src={`${user.picUrl}`} alt="" />
                     </div>
                 )
             }
         }
 
+        let renderUserOptions = () => {
+            if (this.props.id === this.props.currentUser.id){
+                return(
+            <i className="fas fa-cog" onClick={this.editProfileModal.bind(this)} style={{ float: "right", cursor: "pointer" }}></i>
+            )}
+        }
+
         renderUserInfo = renderUserInfo.bind(this)
-        
+        renderUserOptions = renderUserOptions.bind(this)
  
         return(
             <div className="wholeProfileContainer">   
@@ -52,6 +62,7 @@ class UserProfile extends React.Component {
                 <div className="ProfileInfo">
                 <div className="profileHead">
                 {this.props.users[this.props.id].username}
+                {renderUserOptions()}
                 </div>
                 <div className="profileStats">
                     485 posts 351 followers 560 following

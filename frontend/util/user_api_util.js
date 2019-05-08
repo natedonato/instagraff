@@ -1,5 +1,3 @@
-
-
 export const fetchUser = (id) => (
     $.ajax({
         method: "get",
@@ -7,6 +5,13 @@ export const fetchUser = (id) => (
     })
 );
 
+export const updateUser = (user) => (
+    $.ajax({
+        method: "patch",
+        url: `api/users/${user.id}}`,
+        data: { user }
+    })
+);
 
 export const updateUserPhoto = (formData, id) => (
     $.ajax({

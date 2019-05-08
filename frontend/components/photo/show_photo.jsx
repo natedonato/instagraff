@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
+
 class ShowPhoto extends React.Component {
     constructor(props) {
         super(props);
+        this.displayComment = this.displayComment.bind(this);
         if (this.props.photo){
         const date = new Date(this.props.photo.created_at).toString().slice(0, 10).toUpperCase();
         this.state = {
@@ -67,6 +69,21 @@ class ShowPhoto extends React.Component {
         this.setState({ body: "" });
     }
 
+    displayComment(id) {
+        if (this.props.users[this.props.comments[id].author_id] === undefined) {
+            this.props.fetchUser(this.props.comments[id].author_id);
+        }
+        else {
+            return (
+                <div className="comment" key={id}>
+                    <Link to={`/users/${this.props.comments[id].author_id}`} className="posterUsername">
+                        {this.props.users[this.props.comments[id].author_id].username} </Link>
+                    {this.props.comments[id].body}
+                    <i className="fas fa-ellipsis-h" style={{ float: "right" }} onClick={() => this.handleCommentOptions(id)} />
+                </div>)
+        }
+    }
+
     render() {
         const postButton = () => {
             if (this.state.body === "") {
@@ -104,14 +121,8 @@ class ShowPhoto extends React.Component {
                 <div className="showComments">
                 <div className="commentList">
                     {this.props.photo.comment_ids.map((id) => (
-                        <div className="comment" key={id}>
-                            <span className="posterUsername">
-                                {this.props.users[this.props.comments[id].author_id].username}</span>
-                            {this.props.comments[id].body}
-                            <i className="fas fa-ellipsis-h" onClick={()=>this.handleCommentOptions(id)} />
-                        </div>
+                        this.displayComment(id)
                     ))}
-
                     <div className="date" ><Link to={`/photos/${this.props.photo_id}`}>{this.state.date}</Link></div>
                 </div>
 

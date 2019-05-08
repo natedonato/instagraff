@@ -77,11 +77,12 @@
     width: 100%;
     min-height: 56px;
     max-height: 80px;
-
+    
     justify-content: space-between;
     align-items: center;
 }
 .commentList{
+    overflow: scroll;
     width: 100%;
     background-color: white;
     
@@ -96,7 +97,17 @@
     padding-bottom: 6px;
     white-space: pre-line;
     background-color: white;
+    font-size: 14px;
+}
 
+.comment > i {
+    display: none;
+}
+
+.comment:hover > i{
+    color: #999;
+    display: block;
+    cursor: pointer;
 }
 
 .date{
@@ -299,7 +310,6 @@
 }
 
 .photoShow > img {
-    
     max-height: calc(100vh - 150px);
     max-width: calc(100vw - 302px);
     height: auto;
@@ -309,6 +319,7 @@
 
 .sideBarMain{
     width: 302px;
+    max-height: calc(100vh - 150px);
     height: 100%;
     background-color: white;
     display: flex;
@@ -405,6 +416,9 @@
 }
 
 .showComments{
+    max-height: calc(100vh - 218px);
+    height: 100%;
+    overflow: scroll;
     box-sizing: border-box;
     padding: 0px 16px;
     border-top: 1px solid #e6e6e6;
@@ -412,8 +426,6 @@
     flex-direction: column;
     width: 100%;
     min-height: 56px;
-    max-height: 80px;
-
     justify-content: space-between;
     align-items: center;
     background-color: white;
