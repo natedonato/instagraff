@@ -28,6 +28,8 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Comment
 
+    has_many :likes
+    
     has_many :photos,
     foreign_key: :poster_id,
     class_name: :Photo

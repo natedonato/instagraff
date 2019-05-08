@@ -86,12 +86,12 @@ class EditProfile extends React.Component {
                                 value={`${this.state.full_name}`}
                                 onChange={this.update("full_name")}
                                 placeholder="Full Name" />
-                            Username:
+                            {/* Username:
                             <input className="inputfields"
                                 type="text"
                                 value={`${this.state.username}`}
                                 onChange={this.update("username")}
-                                placeholder="Username" />
+                                placeholder="Username" /> */}
                             Bio:
                             <input className="inputfields"
                                 type="text"

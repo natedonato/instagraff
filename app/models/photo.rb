@@ -13,6 +13,8 @@ class Photo < ApplicationRecord
     
     has_one_attached :pic
     
+    has_many :likes
+
     has_many :comments,
     foreign_key: :photo_id,
     class_name: :Comment
