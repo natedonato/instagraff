@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class UserProfile extends React.Component {
     constructor(props) {
         super(props);
+
     }
 
     componentDidUpdate(){
@@ -68,11 +69,8 @@ class UserProfile extends React.Component {
                     485 posts 351 followers 560 following
                 </div>
                 <div className="profileBio">
-                Full Name
-                <br></br>
-                Bio
-                {this.props.users[this.props.id].full_name}
-                {this.props.users[this.props.id].bio}
+                        <div>{this.props.users[this.props.id].full_name}</div>
+                <div>{this.props.users[this.props.id].bio}</div>
                 </div> 
                 </div>
             </div>

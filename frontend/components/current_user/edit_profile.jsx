@@ -6,13 +6,16 @@ import { withRouter } from 'react-router-dom';
 class EditProfile extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             id: this.props.currentUser.id,
             username: this.props.currentUser.username,
             email: this.props.currentUser.email,
-            full_name: this.props.currentUser.full_name
+            full_name: this.props.currentUser.full_name,
+            bio: this.props.currentUser.bio
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.submitButton = this.submitButton.bind(this);
     }
 
     componentWillUnmount() {
@@ -26,6 +29,7 @@ class EditProfile extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger;
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.updateUser(user).then(() => {
@@ -45,16 +49,28 @@ class EditProfile extends React.Component {
         );
     }
 
-
+    submitButton(){
+        if (this.state.username === this.props.currentUser.username &&
+            this.state.email === this.props.currentUser.email &&
+            this.state.bio === this.props.currentUser.bio
+        ) {
+            return (<div style={{ opacity: 0.6 }}
+                className="postButton" >Submit Changes</div >
+            )
+        }
+        return (
+            <div onClick={this.handleSubmit.bind(this)} className="postButton">Submit Changes</div>
+        )
+    }
 
 
     render() {
         return (
             <div className="wholelogin">
                 <div className="loginwrapper">
-                    <div className="loginform">
+                    <div className="loginform" style={{display: "flex", justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                         <form onSubmit={this.handleSubmit}>
-                            <h1>Edit Profile</h1>
+                            <h1 style={{textAlign: 'center'}}>Edit Profile</h1>
                             Email:
                             <input className="inputfields"
                                 type="text"
@@ -73,13 +89,15 @@ class EditProfile extends React.Component {
                                 value={`${this.state.username}`}
                                 onChange={this.update("username")}
                                 placeholder="Username" />
-                            <input type="submit" value="Save Changes" className="submitbutton" />
+                            Bio:
+                            <input className="inputfields"
+                                type="text"
+                                value={`${this.state.bio}`}
+                                onChange={this.update("bio")}
+                                placeholder="Add bio" />
+                            {this.submitButton()}
                         </form>
                         {this.renderErrors()}
-                    </div>
-                    <div className="loginformfooter">
-                        <span>Have an account?</span>
-                        <Link className="signuplink" to="/login"> Log in </Link>
                     </div>
                 </div>
             </div>
