@@ -1,5 +1,5 @@
 import { RECEIVE_PHOTO, RECEIVE_PHOTOS } from '../actions/photo_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 
 import merge from 'lodash/merge';
 
@@ -19,7 +19,9 @@ const commentsReducer = (oldState = {}, action) => {
                 newState[comment.id] = comment
             ));}
             return newState;
-
+        case REMOVE_COMMENT: 
+            delete newState[action.id];
+            return newState;
         case RECEIVE_COMMENT:
                 newState[action.comment.id] = action.comment;
             return newState;

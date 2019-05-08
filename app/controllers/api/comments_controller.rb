@@ -24,7 +24,7 @@ class Api::CommentsController < ApplicationController
         if @comment
             if current_user.comments.include?(@comment)
                 @comment.destroy!
-                render json: {}
+                render json: {photo_id: @comment.photo_id}
             else 
                 render json: ["Invalid request: comment belongs to another user"], status: 401
             end

@@ -28,6 +28,7 @@ const mapDispatchToProps = dispatch => ({
     createComment: (comment) => dispatch(createComment(comment)),
     deleteComment: (id) => dispatch(deleteComment(id)),
     openModal: (id) => dispatch(openModal('photoOptions', id)),
+    openCommentModal: (id) => dispatch(openModal('commentOptions', id)),
 
 });
 

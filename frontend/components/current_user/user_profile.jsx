@@ -29,7 +29,7 @@ class UserProfile extends React.Component {
                 return(
                 <div>
                     <EditProfilePicContainer currentUser={this.props.currentUser} />
-                    {/* <button className="header-button" onClick={this.props.logout}>Log Out</button> */}
+                    <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 </div>)
             } else {
                 let user = this.props.users[this.props.id]

@@ -13,6 +13,7 @@ class ShowPhoto extends React.Component {
             date: date
         };
         }
+        
         else{
             this.state = {
                 body: "",
@@ -20,6 +21,7 @@ class ShowPhoto extends React.Component {
                 date: ""
             };
         }
+        this.handleCommentOptions = this.handleCommentOptions.bind(this);
     }
     componentDidMount(){
             if (this.props.photo === undefined) {
@@ -51,11 +53,16 @@ class ShowPhoto extends React.Component {
         );
     }
 
+    handleCommentOptions(id){
+        this.props.openCommentModal(
+            this.props.comments[id]
+        );
+    }
+
+
     handleSubmit(e) {
         e.preventDefault();
-        const comment = this.state;
-        comment.photo_id = this.props.photo.id;
-        delete comment.date;
+        const comment = { body: this.state.body, photo_id: this.props.photo.id};
         this.props.createComment(comment);
         this.setState({ body: "" });
     }
@@ -101,6 +108,7 @@ class ShowPhoto extends React.Component {
                             <span className="posterUsername">
                                 {this.props.users[this.props.comments[id].author_id].username}</span>
                             {this.props.comments[id].body}
+                            <i className="fas fa-ellipsis-h" onClick={()=>this.handleCommentOptions(id)} />
                         </div>
                     ))}
 

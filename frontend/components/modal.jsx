@@ -1,6 +1,7 @@
 import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
+import CommentOptionsContainer from './comments/comment_options_container';
 
 // import SignupFormContainer from '../session_form/signup_form_container';
 
@@ -19,6 +20,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'photoOptions':
             component = <PhotoOptionsContainer photo={modal.data} />;
+            break;
+        case 'commentOptions':
+            component = <CommentOptionsContainer data={modal.data} />
             break;
         default:
             return null;

@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
                     username: "demo_user93",
                     password: "password93"
                 });
-            }, 990
+            }, 790
             );
         });
     }
