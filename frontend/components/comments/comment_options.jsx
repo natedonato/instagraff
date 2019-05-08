@@ -6,12 +6,7 @@ class CommentOptions extends React.Component {
     constructor(props) {
         super(props);
         console.log(props);
-        // this.state = { confirmation: false };
-        // this.showDelete = this.showDelete.bind(this);
-    // }
-
-    // handleDelete() {
-    //     this.setState({ confirmation: true })
+        this.showDelete = this.showDelete.bind(this)
     }
 
     submitDelete() {
@@ -22,27 +17,29 @@ class CommentOptions extends React.Component {
             });
     }
 
-    // showDelete() {
-    //     if (this.props.photo.poster_id !== this.props.currentUser) {
-    //         return;
-    //     }
-    //     else {
-    //         return (
-    //             <div className="optionsMiddle" onClick={this.handleDelete.bind(this)}>
-    //                 Remove Photo
-    //             </div>
-    //         )
-    //     }
+    showDelete() {
+        if (this.props.comment.author_id !== this.props.currentUser 
+            && this.props.photo.poster_id !== this.props.currentUser) {
+            return(
+                <>
+                </>
+            );
+        }
+        else {
+            return (
+                <div className="optionsMiddle" onClick={this.submitDelete.bind(this)}>
+                    Delete Comment
+                </div>
+            )
+        }
 
-    // }
+    }
 
     render() {
             return (
                 <>
                     <Link className="optionsHead" to={`/users/${this.props.comment.author_id}`} onClick={this.props.closeModal}>Go to user profile</Link>
-                    <div className="optionsMiddle" onClick={this.submitDelete.bind(this)}>
-                        Delete Comment
-                    </div>
+                    {this.showDelete()}
                     <div className="optionsFoot" onClick={this.props.closeModal}>
                         Cancel
                     </div>

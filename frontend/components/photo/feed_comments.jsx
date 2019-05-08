@@ -42,8 +42,8 @@ class FeedComments extends React.Component {
     displayComment(id){
         return(
         <div className="comment" key={id}>
-        <span className="posterUsername">
-            {this.props.users[this.props.comments[id].author_id].username}</span>
+        <Link to={`/users/${this.props.comments[id].author_id}`} className="posterUsername">
+            {this.props.users[this.props.comments[id].author_id].username} </Link>
         { this.props.comments[id].body }
         </div>)
     }
