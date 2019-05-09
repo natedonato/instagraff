@@ -61,15 +61,23 @@ class FeedComments extends React.Component {
     }
 
     likes(){
+        let count;
+        if (this.props.like_count===1)
+            {count = `${this.props.like_count} like`}
+        else{
+            count = `${this.props.like_count} likes` 
+        }
         if(this.props.liked_by_current_user === false){
             return(<>
-            <i className="far fa-heart" onClick={() => this.props.createLike(this.props.photo_id)}></i>  
-            {this.props.like_count}
+                <i className="far fa-heart" id="likeIcon" style={{ cursor: "pointer" }} onClick={() => this.props.createLike(this.props.photo_id)}></i>
+                <div className="comment"> <div style={{ cursor: "default" }} className="posterUsername">{count}</div></div>
             </>)}
         else{
             return(<>
-            <i className="fas fa-heart" onClick={this.deleteLike} style={{ color: "red" }}></i>
-            {this.props.like_count}
+                <i className="fas fa-heart" id="likeIcon" onClick={this.deleteLike} style={{
+                    color: "#ED4956", cursor: "pointer" }}></i>
+                <div className="comment"> <div style={{ cursor: "default"}} className="posterUsername">{count}</div>
+</div>
        </> )}
     }
 
