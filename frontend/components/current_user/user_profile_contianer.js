@@ -38,7 +38,7 @@ class UserBox extends React.Component {
                 logout={logout}
                 openModal={openModal}
                 />
-            <ThumbnailPhotoContainer />
+            <ThumbnailPhotoContainer id={id} />
             </>
         );
     }
