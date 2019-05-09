@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = () => ({
-    openModal: (id) => dispatch(openModal('photoShow', id)),
+    openModal: (id) => (dispatch(openModal('photoShow', id))),
     fetchPhotos: () => (dispatch(fetchPhotos())),
 });
 

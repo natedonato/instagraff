@@ -8,6 +8,8 @@ import CommentOptionsContainer from './comments/comment_options_container';
 import PhotoFormContainer from './photo/photo_form_container';
 import PhotoOptionsContainer from './photo/photo_options_container';
 import UserOptionsModalContainer from './current_user/user_options_modal_container';
+import ShowPhotoContainer from './photo/show_photo_container';
+
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -26,6 +28,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'userOptions':
             component = <UserOptionsModalContainer data={modal.data} />
+            break;
+        case 'photoShow':
+            component = <ShowPhotoContainer id={modal.data} />
             break;
         default:
             return null;

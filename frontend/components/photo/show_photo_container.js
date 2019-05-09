@@ -7,12 +7,12 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    let id = ownProps.match.params.photoId;
-    let user = {};
-    if(state.entities.photos[id]){
-        let userId = state.entities.photos[id].poster_id;
-        user = state.entities.users[userId];
-    }
+    let id;
+    if(ownProps.id)
+    {id = ownProps.id;}
+    else{
+    id = ownProps.match.params.photoId;}
+
     return {
         id: id,
         currentUser: state.session.id,
