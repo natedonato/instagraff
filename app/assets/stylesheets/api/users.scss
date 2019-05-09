@@ -87,10 +87,41 @@
     justify-content: flex-start;
 }
 
+// .thumbnails > div {
+//     width: 28vw;
+//     height: 28vw;
+//     margin: 2.66vw;
+//     object-fit: cover;
+
+// }
+
+
+
 .thumbnails > img {
     width: 28vw;
     height: 28vw;
     margin: 2.66vw;
     object-fit: cover;
+    cursor: pointer;
 
+}
+
+.thumbnails > img:hover {
+    background-color: #262626;
+    opacity: 0.6;
+}
+
+
+.thumbnails-discover > img {
+    width: 14vw;
+    height: 14vw;
+    margin: 1.33vw;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.thumbnails-discover > img:hover {
+    background-color: #262626;
+    opacity: 0.6;
 }

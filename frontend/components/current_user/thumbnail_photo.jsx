@@ -16,8 +16,8 @@ class ThumbnailPhoto extends React.Component {
 
         return(<div className="thumbnails">
             {photos.map(photo => (
-                <img src={`${photo.picUrl}`} key={`${photo.id}`}
-                onClick={() => this.props.openModal(photo.id)}/>
+                    <img alt='View photo' src={`${photo.picUrl}`} key={`${photo.id}`}
+                    onClick={() => this.props.openModal(photo.id)} /> 
             ))        
             }
             </div>

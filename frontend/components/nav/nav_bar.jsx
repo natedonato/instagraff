@@ -22,8 +22,9 @@ class NavBar extends React.Component {
                     </Link>
                     
                     <div className="navbar-righticons">
+                        <Link to='/discover'>
                         <i className="far fa-compass"></i>
-
+                        </Link>
                         <form action="">
                             <label htmlFor="uploadPhoto" title='Upload New Photo' alt='Upload New Photo'>
                                 <i className="fa fa-plus" />
