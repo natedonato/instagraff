@@ -75,3 +75,20 @@
 #newProfilePic{
     display: none;
 }
+
+
+
+
+.thumbnails{
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.thumbnails > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+}

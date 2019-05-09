@@ -4,6 +4,7 @@ import { openModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 import {fetchUser} from '../../actions/user_actions';
 import UserProfile from './user_profile';
+import ThumbnailPhotoContainer from './thumbnail_photos_container'
 
 const mapStateToProps = ( state, ownProps) => {
     let id = ownProps.match.params.id;
@@ -28,7 +29,7 @@ class UserBox extends React.Component {
 
     render() {
         const { id, currentUser, users, fetchUser, logout, openModal} = this.props;
-        return (
+        return (<>
             <UserProfile
                 id={id}
                 currentUser={currentUser}
@@ -37,6 +38,8 @@ class UserBox extends React.Component {
                 logout={logout}
                 openModal={openModal}
                 />
+            <ThumbnailPhotoContainer />
+            </>
         );
     }
 }
