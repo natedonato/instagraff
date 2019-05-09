@@ -7,6 +7,8 @@ class ShowPhoto extends React.Component {
     constructor(props) {
         super(props);
         this.displayComment = this.displayComment.bind(this);
+        this.deleteLike = this.deleteLike.bind(this);
+
         if (this.props.photo){
         const date = new Date(this.props.photo.created_at).toString().slice(0, 10).toUpperCase();
         this.state = {
@@ -84,6 +86,34 @@ class ShowPhoto extends React.Component {
         }
     }
 
+
+    deleteLike() {
+        this.props.deleteLike(this.props.photo.id)
+    }
+
+    likes() {
+        let count;
+        if (this.props.photo.like_count === 1) { count = `${this.props.photo.like_count} like` }
+        else {
+            count = `${this.props.photo.like_count} likes`
+        }
+        if (this.props.photo.liked_by_current_user === false) {
+            return (<>
+                <i className="far fa-heart" id="likeIcon" style={{ cursor: "pointer" }} onClick={() => this.props.createLike(this.props.photo.id)}></i>
+                <div className="comment"> <div style={{ cursor: "default" }} className="posterUsername">{count}</div></div>
+            </>)
+        }
+        else {
+            return (<>
+                <i className="fas fa-heart" id="likeIcon" onClick={this.deleteLike} style={{
+                    color: "#ED4956", cursor: "pointer"
+                }}></i>
+                <div className="comment"> <div style={{ cursor: "default" }} className="posterUsername">{count}</div>
+                </div>
+            </>)
+        }
+    }
+
     render() {
 
         
@@ -130,7 +160,9 @@ class ShowPhoto extends React.Component {
                 
                 
                 </div>
-                
+                <div style={{width: '100%', borderTop: '1px solid #e6e6e6'}}>
+                    {this.likes()}
+                </div>
                 <div className="date" ><Link to={`/photos/${this.props.photo.id}`}>{date}</Link></div>
 
                 <div className="commentFieldBox">
