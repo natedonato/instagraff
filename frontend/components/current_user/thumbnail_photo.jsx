@@ -13,11 +13,17 @@ class ThumbnailPhoto extends React.Component {
             return(<h1> Loading </h1>)
         }
         let photos = Object.values(this.props.photos).filter(photo => photo.poster_id === this.props.id)
-
         return(<div className="thumbnails">
             {photos.map(photo => (
-                    <img alt='View photo' src={`${photo.picUrl}`} key={`${photo.id}`}
+                <div key={`${photo.id}`}>
+                    <img alt='View photo' src={`${photo.picUrl}`} 
                     onClick={() => this.props.openModal(photo.id)} /> 
+                    <div className="thumbOverlay">
+                        <p style={{ zIndex: 8 }}>{photo.like_count} <i className="fas fa-heart" />   {photo.comment_ids.length}  <i class="fas fa-comment"></i>
+
+</p>
+                     </div>
+                    </div>
             ))        
             }
             </div>

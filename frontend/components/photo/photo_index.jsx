@@ -19,7 +19,7 @@ class PhotoIndex extends React.Component {
         }
         return (
             <>
-                {Object.values(this.props.photos).map(photo => (
+                {Object.values(this.props.photos).reverse().map(photo => (
                     <PhotoIndexItem createLike = {this.props.createLike} deleteLike={this.props.deleteLike} photo={photo} key={photo.id} openModal={this.props.openModal} currentUser={this.props.currentUser} user={this.props.users[photo.poster_id]}/>
                 ))}
             </>

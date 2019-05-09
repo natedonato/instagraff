@@ -85,19 +85,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    font-size: 0px;
 }
 
-// .thumbnails > div {
-//     width: 28vw;
-//     height: 28vw;
-//     margin: 2.66vw;
-//     object-fit: cover;
-
-// }
+.thumbnails > div{
+    position: relative;
+}
 
 
-
-.thumbnails > img {
+.thumbnails > div > img {
     width: 28vw;
     height: 28vw;
     margin: 2.66vw;
@@ -106,13 +102,13 @@
 
 }
 
-.thumbnails > img:hover {
+.thumbnails > div > img:hover {
     background-color: #262626;
     opacity: 0.6;
 }
 
 
-.thumbnails-discover > img {
+.thumbnails-discover > div > img {
     width: 14vw;
     height: 14vw;
     margin: 1.33vw;
@@ -121,7 +117,129 @@
 
 }
 
-.thumbnails-discover > img:hover {
+.thumbnails-discover > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    height: 14vw;
+    margin: 1.33vw;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.thumbOverlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 2.66vw;
+    left: 2.66vw;
+    right: 2.66vw;
+    bottom: 2.68vw;
+    background-color: black;
+    opacity: 0;
+}
+
+.thumbOverlay:hover{
+
+    opacity: 0.7;
+}
+.thumbOverlay:hover > p{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 20;
+    color: white;
+    opacity: 1;
+}
+
+.thumbOverlay > p >i {
+    padding-right: 10px;
+}
+
+
+
+
+
+
+////////
+
+
+
+.thumbnails-discover{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 0px;
+}
+
+.thumbnails-discover > div{
+    position: relative;
+}
+
+
+.thumbnails-discover > div > img {
+    width: 14vw;
+    height: 14vw;
+    margin: 1.33vw;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.thumbnails-discover > div > img:hover {
     background-color: #262626;
     opacity: 0.6;
+}
+
+
+.thumbnails-discover-discover > div > img {
+    width: 14vw;
+    height: 14vw;
+    margin: 1.33vw;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.thumbnails-discover-discover > div {
+    width: 14vw;
+    height: 14vw;
+    margin: 1.33vw;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.thumbOverlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    
+    
+    top: 1.33vw;
+    left: 1.33vw;
+    right: 1.33vw;
+    bottom: 1.33vw;
+    background-color: black;
+    opacity: 0;
+}
+
+.thumbOverlay:hover{
+
+    opacity: 0.7;
+}
+.thumbOverlay:hover > p{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 20;
+    color: white;
+    opacity: 1;
+}
+
+.thumbOverlay > p >i {
+    padding-right: 10px;
 }
