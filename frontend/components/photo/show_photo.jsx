@@ -142,11 +142,11 @@ class ShowPhoto extends React.Component {
                 <div className="sidebarMain">
                 <div className="sideBarHeader">
 
-                    <Link className="userInfoPic" to={`/users/${this.props.currentUser}`}>
-                            <img src={`${this.props.users[this.props.currentUser].picUrl}`} className='postProfilePic' alt="" />
+                    <Link className="userInfoPic" to={`/users/${this.props.photo.poster_id}`}>
+                            <img src={`${this.props.users[this.props.photo.poster_id].picUrl}`} className='postProfilePic' alt="" />
                     </Link>
-                    <Link className="userInfo" to={`/users/${this.props.currentUser}`}>
-                            <div className="posterUsername">{this.props.users[this.props.currentUser].username}</div>
+                    <Link className="userInfo" to={`/users/${this.props.photo.poster_id}`}>
+                            <div className="posterUsername">{this.props.users[this.props.photo.poster_id].username}</div>
                     </Link>
 
                     <i className="fas fa-ellipsis-h" onClick={this.handleOptions.bind(this)} />

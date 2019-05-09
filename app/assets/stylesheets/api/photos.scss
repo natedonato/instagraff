@@ -83,6 +83,7 @@
 .commentList{
     overflow: scroll;
     width: 100%;
+    max-width: 262px;
     background-color: white;
     height: 100%;
 }
@@ -320,7 +321,7 @@
 }
 
 .sideBarMain{
-    width: 302px;
+    width: 232px;
     max-height: calc(100vh - 150px);
     height: 100%;
     background-color: white;

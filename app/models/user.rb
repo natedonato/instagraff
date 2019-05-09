@@ -28,7 +28,12 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Comment
 
-    has_many :likes
+
+    has_many :leader_rels, foreign_key: :leader_id, class_name: :Follow, dependent: :destroy
+    has_many :followers, through: :leader_rels, source: :follower
+
+    has_many :following_rels, foreign_key: :follower_id, class_name: :Follow, dependent: :destroy
+    has_many :following, through: :following_rels, source: :leader
     
     has_many :photos,
     foreign_key: :poster_id,
