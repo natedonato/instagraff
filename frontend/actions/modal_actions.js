@@ -4,7 +4,7 @@ export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const openModal = (modal, data) => {
     return {
         type: OPEN_MODAL,
-        modal: {name: modal, data}
+        modal: {name: modal, data} 
     };
 };
 

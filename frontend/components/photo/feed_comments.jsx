@@ -11,6 +11,8 @@ class FeedComments extends React.Component {
             date: date,
             view: `View all ${this.props.comment_ids.length} comments`
         };
+        this.likes = this.likes.bind(this);
+        this.deleteLike = this.deleteLike.bind(this);
         this.displayComment=this.displayComment.bind(this);
     }
 
@@ -52,6 +54,23 @@ class FeedComments extends React.Component {
         { this.props.comments[id].body }
         </div>)
         }
+    }
+
+    deleteLike(){
+        this.props.deleteLike(this.props.photo_id)
+    }
+
+    likes(){
+        if(this.props.liked_by_current_user === false){
+            return(<>
+            <i className="far fa-heart" onClick={() => this.props.createLike(this.props.photo_id)}></i>  
+            {this.props.like_count}
+            </>)}
+        else{
+            return(<>
+            <i className="fas fa-heart" onClick={this.deleteLike} style={{ color: "red" }}></i>
+            {this.props.like_count}
+       </> )}
     }
 
     viewMore(){
@@ -106,21 +125,19 @@ class FeedComments extends React.Component {
         }
         return (
             <div className="postFooterComments"> 
+                <div>
+                    {this.likes()}
+
+                </div>
                 <div className="commentList">
                     {this.viewMore()}
 
-                    {/* {this.props.comment_ids.map((id) => (
-                        <div className="comment" key={id}>
-                            <span className="posterUsername">
-                                {this.props.users[this.props.comments[id].author_id].username}</span>
-                            {this.props.comments[id].body}
-                        </div>
-                    ))} */}
 
-                    <div className="date" ><Link to={`/photos/${this.props.photo_id}`}>{this.state.date}</Link></div>
                 </div> 
+                <div className="date" ><Link to={`/photos/${this.props.photo_id}`}>{this.state.date}</Link></div>
 
                 <div className="commentFieldBox">
+                
                     <textarea rows='1' className="commentField"
                         value={`${this.state.body}`}
                         onChange={this.update("body")}

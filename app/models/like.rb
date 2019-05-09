@@ -11,9 +11,14 @@
 
 class Like < ApplicationRecord
     validates :user_id, :photo_id, presence: true
+    validates :user_id, :uniqueness => { :scope => :photo_id }
 
     belongs_to :user
     
     belongs_to :photo
+
+    def find_by_user_photo(user_id, photo_id)
+        
+    end
 
 end

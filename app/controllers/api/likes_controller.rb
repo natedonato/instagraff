@@ -1,5 +1,4 @@
 class Api::LikesController < ApplicationController
-class Api::CommentsController < ApplicationController
  
     def show
         @like = Like.find_by(id: params[:id])
@@ -16,21 +15,17 @@ class Api::CommentsController < ApplicationController
         if @like.save
             render :show
         else
-            render json: @like.errors.full_messages, status: 404
+            render json: @like.errors.full_messages, status: 403
         end
     end
 
     def destroy
-        @like = Like.find_by(id: params[:id])
+        @like = Like.find_by(user_id: current_user.id, photo_id: params[:id])
         if @like
-            if current_user.likes.include?(@like)
-                @like.destroy!
-                render json: {photo_id: @like.photo_id}
-            else 
-                render json: ["Invalid request: like belongs to another user"], status: 401
-            end
+            @like.destroy!
+            render json: {photo_id: @like.photo_id}
         else
-            render json: ["Couldn't find like to delete"], status: 404
+            render json: ["Couldn't find your like to delete"], status: 404
         end
     end
 

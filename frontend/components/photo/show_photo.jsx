@@ -85,6 +85,8 @@ class ShowPhoto extends React.Component {
     }
 
     render() {
+
+        
         const postButton = () => {
             if (this.state.body === "") {
                 return (<div style={{ opacity: 0.6 }}
@@ -123,9 +125,10 @@ class ShowPhoto extends React.Component {
                     {this.props.photo.comment_ids.map((id) => (
                         this.displayComment(id)
                     ))}
-                    <div className="date" ><Link to={`/photos/${this.props.photo_id}`}>{this.state.date}</Link></div>
+                
+                
+                <div className="date" ><Link to={`/photos/${this.props.photo.id}`}>{this.state.date}</Link></div>
                 </div>
-
                 <div className="commentFieldBox">
                     <textarea rows='1' className="commentField"
                         value={`${this.state.body}`}
