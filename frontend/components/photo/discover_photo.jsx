@@ -19,8 +19,8 @@ class DiscoverPhoto extends React.Component {
                 <div key={`${photo.id}`}>
                     <img alt='View photo' src={`${photo.picUrl}`}
                         onClick={() => this.props.openModal(photo.id)} />
-                    <div className="thumbOverlay">
-                        <p style={{ zIndex: 8 }}>{photo.like_count} <i className="fas fa-heart" />   {photo.comment_ids.length}  <i class="fas fa-comment"></i>
+                    <div className="thumbOverlay" onClick={() => this.props.openModal(photo.id)}>
+                        <p style={{ zIndex: 8 }}>{photo.like_count} <i className="fas fa-heart" />   {photo.comment_ids.length}  <i className="fas fa-comment"></i>
 
                         </p>
                     </div>

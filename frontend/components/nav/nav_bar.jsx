@@ -20,6 +20,7 @@ class NavBar extends React.Component {
                     <Link to='/'>
                         <i className="fab fa-instagram"></i>
                     </Link>
+                    <div></div>
                     
                     <div className="navbar-righticons">
                         <Link to='/discover'>
