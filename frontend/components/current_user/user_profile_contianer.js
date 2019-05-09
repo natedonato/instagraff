@@ -8,10 +8,13 @@ import ThumbnailPhotoContainer from './thumbnail_photos_container'
 
 const mapStateToProps = ( state, ownProps) => {
     let id = ownProps.match.params.id;
+    let photoCount = 0;
+
     return {
         id: parseInt(id),
         currentUser: state.session,
-        users: state.entities.users
+        users: state.entities.users,
+        photos: state.entities.photos
     };
 };
 
@@ -28,7 +31,7 @@ class UserBox extends React.Component {
     }
 
     render() {
-        const { id, currentUser, users, fetchUser, logout, openModal} = this.props;
+        const { id, photos, currentUser, users, fetchUser, logout, openModal} = this.props;
         return (<>
             <UserProfile
                 id={id}
@@ -36,6 +39,7 @@ class UserBox extends React.Component {
                 users={users}
                 fetchUser={fetchUser}
                 logout={logout}
+                photos={photos}
                 openModal={openModal}
                 />
             <ThumbnailPhotoContainer id={id} />

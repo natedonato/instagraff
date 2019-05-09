@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class UserProfile extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidUpdate(){
@@ -24,6 +23,12 @@ class UserProfile extends React.Component {
 
 
     render (){
+        let photoCount = 0;
+        if (this.props.photos !== undefined) {
+            photoCount = Object.values(this.props.photos).filter(photo => photo.poster_id === this.props.id).length;
+        }
+
+
         if (this.props.users[this.props.id] === undefined) {
             return (
                 <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>      
@@ -66,7 +71,7 @@ class UserProfile extends React.Component {
                 {renderUserOptions()}
                 </div>
                 <div className="profileStats">
-                    485 posts 351 followers 560 following
+                    {photoCount} posts 351 followers 560 following
                 </div>
                 <div className="profileBio">
                         <div>{this.props.users[this.props.id].full_name}</div>
