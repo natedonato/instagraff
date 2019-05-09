@@ -110,6 +110,7 @@
 }
 
 .date{
+    width: 100%;
     padding: 0px 16px;
     margin-right: 4px;
     padding-right: 2px;
@@ -309,9 +310,9 @@
 }
 
 .photoShow > img {
-    max-height: calc(100vh - 150px);
+    // max-height: calc(100vh - 150px);
     max-width: calc(100vw - 302px);
-    height: auto;
+    height: calc(100vh - 150px);
     width: auto;
     object-fit: contain;
 }
@@ -323,7 +324,6 @@
     background-color: white;
     display: flex;
     flex-direction: column; 
-    overflow: scroll;
 }
 
 .sideBarHeader{
@@ -417,7 +417,6 @@
 .showComments{
     max-height: calc(100vh - 218px);
     height: 100%;
-    overflow: scroll;
     box-sizing: border-box;
     padding: 0px 16px;
     border-top: 1px solid #e6e6e6;

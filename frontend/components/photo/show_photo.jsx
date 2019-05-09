@@ -103,6 +103,8 @@ class ShowPhoto extends React.Component {
                 <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             )
         }
+        const date = new Date(this.props.photo.created_at).toString().slice(0, 10).toUpperCase();
+
         return (
             <div className="photoShow">
                 <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
@@ -127,8 +129,10 @@ class ShowPhoto extends React.Component {
                     ))}
                 
                 
-                <div className="date" ><Link to={`/photos/${this.props.photo.id}`}>{this.state.date}</Link></div>
                 </div>
+                
+                <div className="date" ><Link to={`/photos/${this.props.photo.id}`}>{date}</Link></div>
+
                 <div className="commentFieldBox">
                     <textarea rows='1' className="commentField"
                         value={`${this.state.body}`}
