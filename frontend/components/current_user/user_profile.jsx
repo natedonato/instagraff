@@ -34,6 +34,28 @@ class UserProfile extends React.Component {
                 <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>      
             )
         }
+        let followerCount = this.props.users[this.props.id].follower_count
+        let followingCount = this.props.users[this.props.id].following_count
+        
+        let SphotoCount;
+        let SfollowerCount;
+
+
+        if (photoCount === 1) { SphotoCount = `${photoCount} photo` }
+        else {
+            SphotoCount = `${photoCount} photos`
+        }
+
+
+        if (followerCount === 1) { SfollowerCount = `${followerCount} follower` }
+        else {
+            SfollowerCount = `${followerCount} followers`
+        }
+
+        
+
+
+
         let renderUserInfo = () => {
             if (this.props.id === this.props.currentUser.id){
                 return(
@@ -71,7 +93,7 @@ class UserProfile extends React.Component {
                 {renderUserOptions()}
                 </div>
                 <div className="profileStats">
-                    {photoCount} posts 351 followers 560 following
+                    {SphotoCount}  {SfollowerCount}  {followingCount} following 
                 </div>
                 <div className="profileBio">
                         <div>{this.props.users[this.props.id].full_name}</div>
