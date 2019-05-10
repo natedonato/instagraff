@@ -94,9 +94,10 @@
 
 
 .thumbnails > div > img {
-    width: 28vw;
-    height: 28vw;
-    margin: 2.66vw;
+    width: 33vw;
+    height: 33vw;
+    padding: 10px;
+    box-sizing: border-box;
     object-fit: cover;
     cursor: pointer;
 
