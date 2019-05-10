@@ -8,7 +8,7 @@ export const createFollow = (leader_id) => (
     $.ajax({
         method: "post",
         url: `api/follows/`,
-        data: { like: { leader_id: leader_id } }
+        data: { follow: { leader_id: leader_id } }
     })
 );
 

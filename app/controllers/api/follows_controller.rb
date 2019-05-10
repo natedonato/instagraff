@@ -23,10 +23,10 @@ class Api::FollowsController < ApplicationController
     end
 
     def destroy
-        @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id])
+        @follow = Follow.find_by(follower_id: current_user.id, leader_id: params[:id])
         if @follow
             @follow.destroy!
-            render json: {photo_id: @follow.photo_id}
+            render json: { leader_id: @follow.leader_id, follower_id: @follow.follower_id}
         else
             render json: ["Couldn't find your follow to delete"], status: 404
         end

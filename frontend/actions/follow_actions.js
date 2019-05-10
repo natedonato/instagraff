@@ -9,10 +9,10 @@ const receiveFollow = (follow) => ({
     follow: follow
 });
 
-const removeFollow = (id) => ({
+const removeFollow = (res) => ({
     type: REMOVE_FOLLOW,
-    id: id,
-    leader_id: id,
+    leader_id: res.leader_id,
+    follower_id: res.follower_id,
 });
 
 const receiveErrors = (errors) => ({
@@ -25,5 +25,5 @@ export const createFollow = (follow) => (dispatch) => (
 );
 
 export const deleteFollow = (leader_id) => (dispatch) => (
-    APIUtil.deleteFollow(leader_id).then((res) => dispatch(removeFollow(leader_id), errors => (dispatch(receiveErrors(errors.responseJSON))))
+    APIUtil.deleteFollow(leader_id).then((res) => dispatch(removeFollow(res), errors => (dispatch(receiveErrors(errors.responseJSON))))
     ));

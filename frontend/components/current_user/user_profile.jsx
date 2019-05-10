@@ -5,6 +5,34 @@ import { Link } from 'react-router-dom';
 class UserProfile extends React.Component {
     constructor(props) {
         super(props);
+        this.deleteFollow = this.deleteFollow.bind(this);
+        this.createFollow = this.createFollow.bind(this);
+    }
+
+
+    deleteFollow() {
+        this.props.deleteFollow(this.props.id);
+    }
+
+    createFollow(){
+        this.props.createFollow(this.props.id);
+    }
+
+
+    follows() {
+        if (this.props.users[this.props.id].followed_by_current_user === false) {
+            return (<>
+                <div className="submitbutton" style={{width: "auto", height: "auto", marginRight: "20px", marginTop: "0px", marginBottom: "0px"}}onClick={this.createFollow} > Follow </div>
+            </>)
+        }
+        else {
+            return (<>
+                <span onClick={this.deleteFollow} style={{
+                    color: "#ED4956", cursor: "pointer"
+                }}> Unfollow
+                </span>
+            </>)
+        }
     }
 
     componentDidUpdate(){
@@ -41,20 +69,16 @@ class UserProfile extends React.Component {
         let SfollowerCount;
 
 
-        if (photoCount === 1) { SphotoCount = `${photoCount} photo` }
+        if (photoCount === 1) { SphotoCount = `${photoCount} photo   ` }
         else {
-            SphotoCount = `${photoCount} photos`
+            SphotoCount = `${photoCount} photos   `
         }
 
 
-        if (followerCount === 1) { SfollowerCount = `${followerCount} follower` }
+        if (followerCount === 1) { SfollowerCount = `${followerCount} follower   ` }
         else {
-            SfollowerCount = `${followerCount} followers`
+            SfollowerCount = `${followerCount} followers   `
         }
-
-        
-
-
 
         let renderUserInfo = () => {
             if (this.props.id === this.props.currentUser.id){
@@ -75,9 +99,11 @@ class UserProfile extends React.Component {
         let renderUserOptions = () => {
             if (this.props.id === this.props.currentUser.id){
                 return(
-            <i className="fas fa-cog" onClick={this.editProfileModal.bind(this)} style={{ float: "right", cursor: "pointer" }}></i>
+                    <i className="fas fa-cog" style={{ float: "right", cursor: "pointer"
+            } }onClick={this.editProfileModal.bind(this)} ></i>
             )}
         }
+        
 
         renderUserInfo = renderUserInfo.bind(this)
         renderUserOptions = renderUserOptions.bind(this)
@@ -90,13 +116,25 @@ class UserProfile extends React.Component {
                 <div className="ProfileInfo">
                 <div className="profileHead">
                 {this.props.users[this.props.id].username}
+
+
+                        <div style={{ float: "right", cursor: "pointer" , display: "flex", justifyContent: "flex-end", alignItems: "center"}}
+                        
+                        
+                        
+                        
+                        
+                        >
+                {this.follows()}
                 {renderUserOptions()}
+                        </div>
                 </div>
                 <div className="profileStats">
+                        {/* {`${this.props.users[this.props.id].followed_by_current_user}`} */}
                     {SphotoCount}  {SfollowerCount}  {followingCount} following 
                 </div>
                 <div className="profileBio">
-                        <div>{this.props.users[this.props.id].full_name}</div>
+                        <div className="posterUsername" style={{pointer: "default"}} >{this.props.users[this.props.id].full_name}</div>
                 <div>{this.props.users[this.props.id].bio}</div>
                 </div> 
                 </div>

@@ -12,7 +12,7 @@ class ThumbnailPhoto extends React.Component {
         if (Object.keys(this.props.photos).length === 0){
             return(<h1> Loading </h1>)
         }
-        let photos = Object.values(this.props.photos).filter(photo => photo.poster_id === this.props.id)
+        let photos = Object.values(this.props.photos).filter(photo => photo.poster_id === this.props.id).reverse();
         return(<div className="thumbnails">
             {photos.map(photo => (
                 <div key={`${photo.id}`}>

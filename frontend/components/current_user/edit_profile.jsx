@@ -14,6 +14,17 @@ class EditProfile extends React.Component {
             full_name: this.props.currentUser.full_name,
             bio: this.props.currentUser.bio
         };
+
+        if(this.state.bio === null){
+            this.state.bio = "";
+        }
+        if(this.state.email === null){
+            this.state.email = "";
+        }
+        if(this.state.full_name === null){
+            this.state.full_name = "";
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.submitButton = this.submitButton.bind(this);
     }
@@ -29,7 +40,6 @@ class EditProfile extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger;
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.updateUser(user).then(() => {

@@ -13,13 +13,15 @@ class NavBar extends React.Component {
     }    
  
     render() {
-        return (
+        return (    
             <>
                 
                 <div className="navbar">
                     <Link to='/'>
                         <i className="fab fa-instagram"></i>
                     </Link>
+                    {/* <div style={{fontSize: "30px", padding: "0px"}}className="instagraff">Instagraff
+                    </div> */}
                     <div></div>
                     
                     <div className="navbar-righticons">

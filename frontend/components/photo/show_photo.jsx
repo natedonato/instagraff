@@ -137,7 +137,7 @@ class ShowPhoto extends React.Component {
 
         return (
             <div className="photoShow">
-                <img className="postPic" src={`${this.props.photo.picUrl}`} alt="" />
+                <img className="postPic" style={ {maxWidth: "calc(100vw - 290px)"}} src={`${this.props.photo.picUrl}`} alt="" />
                 
                 <div className="sidebarMain">
                 <div className="sideBarHeader">
