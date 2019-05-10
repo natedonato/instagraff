@@ -9,7 +9,7 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
  
  Users have a profile where you can see their info and photos.  Profile page displays statistics on the users posts and follows / followers.  Users feature a changeable profile picture and editable personal info / biography displayed on their profile.  
  
-![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/Screen%20Shot%202019-05-10%20at%2011.43.39%20AM.png "Photo Show Modal")
+![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/Screen%20Shot%202019-05-10%20at%2011.43.39%20AM.png "Profile")
 
 Users may follow and be followed by other users.  Photos posted by users you follow are displayed in your feed on the main page.
 
@@ -30,12 +30,7 @@ Users may follow and be followed by other users.  Photos posted by users you fol
   
   
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/comments.png "View More")
-
-  
-  
-  
-  
-  
+    
   
  #Responsive Design
-  Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind.
+ ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/mobile.png "Mobile View") Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind.
