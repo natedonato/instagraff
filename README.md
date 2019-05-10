@@ -7,7 +7,12 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
 #User Auth
   Secure authentication uses hashing function BCrypt to manage passwords securely and prevent storing plaintext user passwords in database.  Certain pages are protected and cannot be viewed by users without sign in.  Users are allowed to remove their own photos or comments. 
  
+ Users have a profile where you can see their info and photos.  Profile page displays statistics on the users posts and follows / followers.  Users feature a changeable profile picture and editable personal info / biography displayed on their profile.  
+ 
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/Screen%20Shot%202019-05-10%20at%2011.43.39%20AM.png "Photo Show Modal")
+
+Users may follow and be followed by other users.  Photos posted by users you follow are displayed in your feed on the main page.
+
 #Photos
   Users can create photo posts by uploading images directly from their computer or phone.  Instagraff uses S3 provided by Amazon Web Services to store and host images.
   
