@@ -13,6 +13,9 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
   
   Photos can be displayed in a variety of ways, including a photo feed, an individual photo show page / modal, and a thumbnail view for overviewing many different photos at once.
   
+![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/photo_show.png "Photo Show Modal")
+
+  
   Photos feature both likes and comments.  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed
   
   
