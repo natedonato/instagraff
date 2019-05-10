@@ -4,14 +4,30 @@
 
 Instagraff is a social network and image sharing platform based on Instagram.  The front end components are built on React.js and Redux architecture, while PostgreSQL and Rails fill out the lower levels of the stack.  Instagraff integrates with Amazon Web Services to host uploaded images.
 
+#User Auth
+  Secure authentication uses hashing function BCrypt to manage passwords securely and prevent storing plaintext user passwords in database.  Certain pages are protected and cannot be viewed by users without sign in.  Users are allowed to remove their own photos or comments. 
+  
 
+#Photos
+  Users can create photo posts by uploading images directly from their computer or phone.  Instagraff uses S3 provided by Amazon Web Services to store and host images.
+  
+  Photos can be displayed in a variety of ways, including a photo feed, an individual photo show page / modal, and a thumbnail view for overviewing many different photos at once.
+  
+  Photos feature both likes and comments.  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed
+  
+  
+  
+  
+  
+  
+  
+ #Responsive Design
+  Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind.
 
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
+ 
+ 
+ 
+ 
 
 * Configuration
 
