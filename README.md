@@ -19,6 +19,9 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
   Photos feature both likes and comments.  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed
   
   
+![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/comments.png "View More")
+
+  
   
   
   
