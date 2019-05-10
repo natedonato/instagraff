@@ -4,7 +4,7 @@
 
 Instagraff is a social network and image sharing platform based on Instagram.  The front end components are built on React.js and Redux architecture, while PostgreSQL and Rails fill out the lower levels of the stack.  Instagraff integrates with Amazon Web Services to host uploaded images.
 
-#User Auth
+## User Auth
   Secure authentication uses hashing function BCrypt to manage passwords securely and prevent storing plaintext user passwords in database.  Certain pages are protected and cannot be viewed by users without sign in.  Users are allowed to remove their own photos or comments. 
  
  Users have a profile where you can see their info and photos.  Profile page displays statistics on the users posts and follows / followers.  Users feature a changeable profile picture and editable personal info / biography displayed on their profile.  
@@ -13,7 +13,7 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
 
 Users may follow and be followed by other users.  Photos posted by users you follow are displayed in your feed on the main page.
 
-#Photos
+## Photos
   Users can create photo posts by uploading images directly from their computer or phone.  Instagraff uses S3 provided by Amazon Web Services to store and host images.
   
   Photos can be displayed in a variety of ways, including a photo feed, an individual photo show page / modal, and a thumbnail view for overviewing many different photos at once.
@@ -32,5 +32,5 @@ Users may follow and be followed by other users.  Photos posted by users you fol
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/comments.png "View More")
     
   
- #Responsive Design
+ ## Responsive Design
  Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind. <img src="https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/mobile.png" width="400px"> 
