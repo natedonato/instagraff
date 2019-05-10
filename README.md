@@ -33,4 +33,7 @@ Users may follow and be followed by other users.  Photos posted by users you fol
     
   
  #Responsive Design
- ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/mobile.png =450x "Mobile View") Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind.
+ 
+ <img src="https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/mobile.png" width="600px">
+ 
+Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind.
