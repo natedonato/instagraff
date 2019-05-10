@@ -16,7 +16,12 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/photo_show.png "Photo Show Modal")
 
   
-  Photos feature both likes and comments.  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed
+  Photos feature both likes and comments.  On the display page and profile page the comment and like count are displayed on hover.
+  
+![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/Untitled%202.png "Photo hover display")
+
+  
+  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed.  Users can 
   
   
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/comments.png "View More")
@@ -29,22 +34,3 @@ Instagraff is a social network and image sharing platform based on Instagram.  T
   
  #Responsive Design
   Instagraff resizes elements to fit different devices, and features seperate styles optimized for desktop view and mobile view.  Both mobile and desktop users can enjoy the full suite of instagraff functionality including uploading and easily viewing photos, using front end components designed with scalability in mind.
-
- 
- 
- 
- 
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
