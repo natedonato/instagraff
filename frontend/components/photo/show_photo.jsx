@@ -164,9 +164,8 @@ class ShowPhoto extends React.Component {
                 </div>
                 <div style={{width: '100%', borderTop: '1px solid #e6e6e6'}}>
                     {this.likes()}
-                </div>
                 <div className="date" ><Link to={`/photos/${this.props.photo.id}`}>{date}</Link></div>
-
+                </div>
                 <div className="commentFieldBox">
                     <textarea rows='1' className="commentField"
                         value={`${this.state.body}`}
