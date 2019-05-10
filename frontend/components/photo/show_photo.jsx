@@ -141,14 +141,16 @@ class ShowPhoto extends React.Component {
                 
                 <div className="sidebarMain">
                 <div className="sideBarHeader">
-
+                        <div style={{
+                            display: "flex",
+                            alignItems: "center"}}>
                     <Link className="userInfoPic" to={`/users/${this.props.photo.poster_id}`}>
                             <img src={`${this.props.users[this.props.photo.poster_id].picUrl}`} className='postProfilePic' alt="" />
                     </Link>
                     <Link className="userInfo" to={`/users/${this.props.photo.poster_id}`}>
                             <div className="posterUsername">{this.props.users[this.props.photo.poster_id].username}</div>
                     </Link>
-
+                    </div>
                     <i className="fas fa-ellipsis-h" onClick={this.handleOptions.bind(this)} />
 
                 </div>  

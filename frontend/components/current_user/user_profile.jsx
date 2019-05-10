@@ -22,14 +22,16 @@ class UserProfile extends React.Component {
     follows() {
         if (this.props.users[this.props.id].followed_by_current_user === false) {
             return (<>
-                <div className="submitbutton" style={{width: "auto", height: "auto", marginRight: "20px", marginTop: "0px", marginBottom: "0px"}}onClick={this.createFollow} > Follow </div>
+                <div className="submitbutton" style={{width: "auto", 
+                height: "auto", marginRight: "20px", marginTop: "0px", 
+                marginBottom: "0px"}}onClick={this.createFollow} > Follow </div>
             </>)
         }
         else {
             return (<>
-                <span onClick={this.deleteFollow} style={{
-                    color: "#ED4956", cursor: "pointer"
-                }}> Unfollow
+                <span onClick={this.deleteFollow} className="submitbutton" 
+                style={{ width: "auto", height: "auto", marginRight: "20px", 
+                    marginTop: "0px", marginBottom: "0px", backgroundColor: "#f03838" }}> Unfollow
                 </span>
             </>)
         }
