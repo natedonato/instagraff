@@ -1,6 +1,6 @@
 # Instagraff
 
-[Live Site](https://www.instagraff.herokuapp.com)
+[Live Site](https://instagraff.herokuapp.com)
 
 Instagraff is a social network and image sharing platform based on Instagram.  The front end components are built on React.js and Redux architecture, while PostgreSQL and Rails fill out the lower levels of the stack.  Instagraff integrates with Amazon Web Services to host uploaded images.
 
