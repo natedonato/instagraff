@@ -7,7 +7,9 @@ class PhotoForm extends React.Component {
         super(props);
         this.state = {
             photoFile: props.data.photoFile,
-            comment: ""
+            comment: "",
+            loading: false,
+            style: {opacity: 1.0}
         };
 
         const file = props.data.photoFile;
@@ -39,7 +41,12 @@ class PhotoForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if(this.state.photoFile === null){
+            this.state.loading = false;
+            this.state.style = {opacity: 1};
             alert("Upload Failed - No Photo File Detected! \n \t Please make sure you have attached a photo and try again. \t");}
+        else if(!this.state.loading){
+        this.setState({loading: true});
+        this.setState({style: {opacity: 0.6}});
         const formData = new FormData();
         formData.append('photo[pic]', this.state.photoFile);
         this.props.postPhoto(formData).then((result) => {
@@ -51,6 +58,7 @@ class PhotoForm extends React.Component {
                 }
             this.props.history.push(`/photos/${result.data.photo.id}`);
         });
+        }
     }
 
     handleCancel(e){
@@ -71,9 +79,9 @@ class PhotoForm extends React.Component {
                     <div className="photoFormHeader">New Photo Post</div>
                     <input className="postButton" type="submit" value="Share" onClick={this.handleSubmit.bind(this)} />
                 </div>
-                <img className="previewPostImage" src={this.state.previewUrl} />
+                <img className="previewPostImage" src={this.state.previewUrl} style={this.state.style} />
                 <div className="captionBox">
-                    <img className="postProfilePic" src={`${this.props.currentUser.picUrl}`} alt="" />
+                    <img className="postProfilePic" src={`${this.props.currentUser.picUrl}`} alt=""  />
                     <textarea className="captionField" 
                        value={`${this.state.comment}`}
                        onChange={this.update("comment")}

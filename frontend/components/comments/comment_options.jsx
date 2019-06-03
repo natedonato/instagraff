@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class CommentOptions extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.showDelete = this.showDelete.bind(this)
     }
 
