@@ -140,7 +140,7 @@ class ShowPhoto extends React.Component {
                 <img className="postPic" style={ {maxWidth: "calc(100vw - 290px)"}} src={`${this.props.photo.picUrl}`} alt="" />
                 
                 <div className="sidebarMain">
-                <div className="sideBarHeader">
+                <div className="sideBarHeader"> 
                         <div style={{
                             display: "flex",
                             alignItems: "center"}}>
@@ -151,7 +151,7 @@ class ShowPhoto extends React.Component {
                             <div className="posterUsername">{this.props.users[this.props.photo.poster_id].username}</div>
                     </Link>
                     </div>
-                    <i className="fas fa-ellipsis-h" onClick={this.handleOptions.bind(this)} />
+                    <i className="fas fa-ellipsis-h" style={{cursor: "pointer"}} onClick={this.handleOptions.bind(this)} />
 
                 </div>  
                 <div className="showComments">

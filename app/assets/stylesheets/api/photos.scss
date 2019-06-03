@@ -113,7 +113,7 @@
 }
 
 .date{
-    width: 100%;
+    width: 200px;
     padding: 0px 16px;
     margin-right: 4px;
     padding-right: 2px;
@@ -340,6 +340,9 @@
     background-color: white;
     background-color: white;
 
+}
+.sideBarHeader > i{
+    cursor: pointer;
 }
 
 
