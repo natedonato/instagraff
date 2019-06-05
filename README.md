@@ -28,7 +28,7 @@ Users may follow and be followed by other users.  Photos posted by users you fol
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/Untitled%202.png "Photo hover display")
 
   
-  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed.  Users can 
+  The comments will render within in a view more menu if the number of comments would interrupt the flow of the photo feed.  Users can edit or remove their own comments as well as comments posted on photos they authored, but otherwise cannot alter other user comments.
   
   
 ![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/comments.png "View More")
