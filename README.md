@@ -15,7 +15,7 @@ Users may follow and be followed by other users.  Photos posted by users you fol
 
 ## Photos
   Users can create photo posts by uploading images directly from their computer or phone.  Instagraff uses S3 provided by Amazon Web Services to store and host images.  RESTful routing is implemented to map HTTP requests to backend CRUD operations.
-![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/snipped.png "Photo Routes")
+![alt text](https://raw.githubusercontent.com/natedonato/instagraff/master/productionmanual/snippet.png "Photo Routes")
 
   
   Photos can be displayed in a variety of ways, including a photo feed, an individual photo show page / modal, and a thumbnail view for overviewing many different photos at once.
