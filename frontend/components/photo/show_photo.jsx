@@ -155,7 +155,7 @@ class ShowPhoto extends React.Component {
 
                 </div>  
                 <div className="showComments">
-                <div className="commentList">
+                        <div className="commentList" style={{maxWidth: "262px", overflow: "auto"}}>
                     {this.props.photo.comment_ids.map((id) => (
                         this.displayComment(id)
                     ))}
