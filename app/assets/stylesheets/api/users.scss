@@ -1,7 +1,12 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@media screen and (max-width: 600px) {
+  div.thumbnails{
+    width: 100%;
+    min-width: 100%;
+  }
+}
 
 .wholeProfileContainer{
     display: flex;
@@ -81,11 +86,13 @@
 
 
 .thumbnails{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     font-size: 0px;
+    min-width: 600px;
+    max-width: 800px;
 }
 
 .thumbnails > div{
